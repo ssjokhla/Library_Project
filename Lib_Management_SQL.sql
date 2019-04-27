@@ -1,3 +1,92 @@
+City Library Project
+
+	
+CREATE TABLE Users (
+	ReaderID INT NOT NULL,
+	RType
+
+CREATE TABLE Author (
+	AuthorID int NOT NULL,
+	AName VARCHAR(20) NOT NULL,
+	PRIMARY KEY (AuthorID)
+	)
+	
+CREATE TABLE Writes (
+	AuthorID INT NOT NULL,
+	DocID INT NOT NULL,
+	FOREIGN KEY (AuthorID) REFERENCES Author(AuthorID),
+	FOREIGN KEY (DocID) REFERENCES Book(DocID),
+	PRIMARY KEY (AuthorID, DocID)
+	);
+	
+CREATE TABLE Book (
+	DocID INT NOT NULL,
+	ISBN INT NOT NULL,
+	PRIMARY KEY (DocID),
+	FOREIGN KEY (DocID) REFERENCES Document(DocID)
+	);
+	
+CREATE TABLE Journal_Volume (
+	DocID INT NOT NULL,
+	JVolume INT NOT NULL,
+	Editor_ID INT NOT NULL,
+	PRIMARY KEY (DocID),
+	FOREIGN KEY (DocID) REFERENCES Document(DocID)
+	);
+	
+CREATE TABLE Journal_Issue (
+	DocID INT NOT NULL,
+	Issue_No INT NOT NULL,
+	Scope VARCHAR(20) NOT NULL,
+	PRIMARY KEY (DocID, Issue_No),
+	FOREIGN KEY (DocID) REFERENCES Journal_Volume(DocID)
+	);
+	
+CREATE TABLE Chief_Editor (
+	Editor_ID INT NOT NULL,
+	EName VARCHAR(20) NOT NULL,
+	PRIMARY KEY (Editor_ID)
+	);
+	
+CREATE TABLE Inv_Editor (
+	DocID INT NOT NULL,
+	Issue_No INT NOT NULL,
+	IEName VARCHAR(20) NOT NULL,
+	PRIMARY KEY (DocID, Issue_No, IEName),
+	FOREIGN KEY (DocID, Issue_No) REFERENCES Journal_Issue(DocID, Issue_No)
+	);
+	
+CREATE TABLE Proceedings (
+	DocID INT NOT NULL,
+	CDate DATETIME NOT NULL,
+	CLoacation VARCHAR(20) NOT NULL,
+	CEditor VARCHAR(20) NOT NULL,
+	PRIMARY KEY (DocID),
+	FOREIGN KEY (DocID) REFERENCES Document(DocID)
+	);
+	
+CREATE TABLE Document (
+	DocID INT NOT NULL,
+	Title VARCHAR(20) NOT NULL,
+	PDate DATETIME NOT NULL,
+	PublisherID INT NOT NULL,
+	PRIMARY KEY (DocID),
+	FOREIGN KEY (PublisherID) REFERENCES Publisher(PublisherID)
+	);
+	
+CREATE TABLE Publisher (
+	PublisherID INT NOT NULL,
+	PubName VARCHAR(20) NOT NULL,
+	Address VARCHAR(50) NOT NULL,
+	PRIMARY KEY (PublisherID)
+	);
+	
+CREATE TABLE Admins (
+	Username VARCHAR(20) NOT NULL,
+	Password VARCHAR(20) NOT NULL
+	);
+
+
 CREATE TABLE Copy(
 	DocID INT NOT NULL,
 	CopyNO INT NOT NULL,
