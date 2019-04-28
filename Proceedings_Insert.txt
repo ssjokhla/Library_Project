@@ -1,228 +1,197 @@
 INSERT INTO Publisher
-VALUES ("1234", "Publisher 1234", "1234 Publisher Ln")
+VALUES ("1234", "Publisher 1234", "1234 Publisher Ln");
 
 Insert into Document
-VALUES ("1234", "Proceeding 1234", "2009-05-21", "1234")
-
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
+VALUES ("1234", "Proceeding 1234", "2009-05-21", "1234");
 
 INSERT INTO Copy
-VALUES ("1234", "1", "1111", "NE")
+VALUES ("1234", "1", "1111", "NE");
 
 INSERT INTO Proceedings
-VALUES ("1234", "2019-04-27 03:25:32", "NE", "Hodor")
+VALUES ("1234", "2019-04-27 03:25:32", "NE", "Hodor");
 
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 
 
 INSERT INTO Publisher
-VALUES ("8960", "Publisher 8960", "8960 Publisher Ln")
+VALUES ("8960", "Publisher 8960", "8960 Publisher Ln");
 
 Insert into Document
-VALUES ("8960", "Proceeding 8960", "2007-12-21", "8960")
+VALUES ("8960", "Proceeding 8960", "2007-12-21", "8960");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("8960", "1", "8960", "SE")
+VALUES ("8960", "1", "1111", "SE");
 
 INSERT INTO Proceedings
-VALUES ("8960", "2018-08-27 03:25:32", "SE", "Riley")
+VALUES ("8960", "2018-08-27 03:25:32", "SE", "Riley");
 
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("5200", "Publisher 5200", "5200 Publisher Ln")
+VALUES ("5200", "Publisher 5200", "5200 Publisher Ln");
 
 Insert into Document
-VALUES ("5200", "Proceeding 5200", "2012-05-21", "5200")
-
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
+VALUES ("5200", "Proceeding 5200", "2012-05-21", "5200");
 
 INSERT INTO Copy
-VALUES ("5200", "1", "1111", "NW")
+VALUES ("5200", "1", "1111", "NW");
 
 INSERT INTO Proceedings
-VALUES ("5200", "2019-02-17 03:25:32", "NW", "Samwell")
+VALUES ("5200", "2019-02-17 03:25:32", "NW", "Samwell");
 
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("1928", "Publisher 1928", "1928 Publisher Ln")
+VALUES ("1928", "Publisher 1928", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("1928", "Proceeding 1928", "2011-08-22", "1928")
-
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
+VALUES ("1928", "Proceeding 1928", "2011-08-22", "1928");
 
 INSERT INTO Copy
-VALUES ("1928", "1", "1111", "SW")
+VALUES ("1928", "1", "1111", "SW");
 
 INSERT INTO Proceedings
-VALUES ("1928", "2019-03-19 03:25:32", "SW", "Jerome")
+VALUES ("1928", "2019-03-19 03:25:32", "SW", "Jerome");
 
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("1293", "Publisher 1293", "1928 Publisher Ln")
+VALUES ("1293", "Publisher 1293", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("1293", "Proceeding 1293", "2017-12-15", "1293")
-
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
+VALUES ("1293", "Proceeding 1293", "2017-12-15", "1293");
 
 INSERT INTO Copy
-VALUES ("1293", "1", "1111", "SW")
+VALUES ("1293", "1", "1111", "SW");
 
 INSERT INTO Proceedings
-VALUES ("1293", "2019-03-19 03:25:32", "SW", "Jerome")
+VALUES ("1293", "2019-03-19 03:25:32", "SW", "Jerome");
 
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("1293", "Publisher 1293", "1928 Publisher Ln")
+VALUES ("1294", "Publisher 1294", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("1293", "Proceeding 1293", "2013-04-07", "1293")
+VALUES ("1294", "Proceeding 1294", "2013-04-07", "1293");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("1293", "1", "1111", "NW")
+VALUES ("1294", "1", "1111", "NW");
 
 INSERT INTO Proceedings
-VALUES ("1293", "2019-03-19 03:25:32", "NW", "Jerome")
+VALUES ("1294", "2019-03-19 03:25:32", "NW", "Jerome");
 
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("9872", "Publisher 9872", "1928 Publisher Ln")
+VALUES ("9872", "Publisher 9872", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("9872", "Proceeding 9872", "2015-07-14", "9872")
+VALUES ("9872", "Proceeding 9872", "2015-07-14", "9872");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("9872", "1", "1111", "NE")
+VALUES ("9872", "1", "1111", "NE");
 
 INSERT INTO Proceedings
-VALUES ("9872", "2019-03-19 03:25:32", "NE", "Jerome")
+VALUES ("9872", "2019-03-19 03:25:32", "NE", "Jerome");
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("2198", "Publisher 2198", "1928 Publisher Ln")
+VALUES ("2198", "Publisher 2198", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("2198", "Proceeding 2198", "2011-11-111", "2198")
+VALUES ("2198", "Proceeding 2198", "2011-11-11", "2198");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("2198", "1", "1111", "SW")
+VALUES ("2198", "1", "1111", "SW");
 
 INSERT INTO Proceedings
-VALUES ("2198", "2019-03-19 03:25:32", "SW", "Jerome")
+VALUES ("2198", "2019-03-19 03:25:32", "SW", "Jerome");
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("6876", "Publisher 6876", "1928 Publisher Ln")
+VALUES ("6876", "Publisher 6876", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("6876", "Proceeding 6876", "2015-09-21", "6876")
+VALUES ("6876", "Proceeding 6876", "2015-09-21", "6876");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("6876", "1", "1111", "NE")
+VALUES ("6876", "1", "1111", "NE");
 
 INSERT INTO Proceedings
-VALUES ("6876", "2019-03-19 03:25:32", "NE", "Jerome")
+VALUES ("6876", "2019-03-19 03:25:32", "NE", "Jerome");
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("5312", "Publisher 5312", "1928 Publisher Ln")
+VALUES ("5312", "Publisher 5312", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("5312", "Proceeding 5312", "2015-06-06", "5312")
+VALUES ("5312", "Proceeding 5312", "2015-06-06", "5312");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("5312", "1", "1111", "SE")
+VALUES ("5312", "1", "1111", "SE");
 
 INSERT INTO Proceedings
-VALUES ("5312", "2019-03-19 03:25:32", "SE", "Jerome")
+VALUES ("5312", "2019-03-19 03:25:32", "SE", "Jerome");
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("4235", "Publisher 4235", "1928 Publisher Ln")
+VALUES ("4235", "Publisher 4235", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("4235", "Proceeding 4235", "2015-07-07", "4235")
+VALUES ("4235", "Proceeding 4235", "2015-07-07", "4235");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("4235", "1", "1111", "SW")
+VALUES ("4235", "1", "1111", "SW");
 
 INSERT INTO Proceedings
-VALUES ("4235", "2019-03-19 03:25:32", "SW", "Jerome")
+VALUES ("4235", "2019-03-19 03:25:32", "SW", "Jerome");
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("2351", "Publisher 2351", "1928 Publisher Ln")
+VALUES ("2351", "Publisher 2351", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("2351", "Proceeding 2351", "2015-08-08", "2351")
+VALUES ("2351", "Proceeding 2351", "2015-08-08", "2351");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("2351", "1", "1111", "NE")
+VALUES ("2351", "1", "1111", "NE");
 
 INSERT INTO Proceedings
-VALUES ("2351", "2019-03-19 03:25:32", "NE", "Jerome")
+VALUES ("2351", "2019-03-19 03:25:32", "NE", "Jerome");
 
-//----------------------------------------------------------------------//
+-- Next Proceeding
 
 INSERT INTO Publisher
-VALUES ("9978", "Publisher 9978", "1928 Publisher Ln")
+VALUES ("9978", "Publisher 9978", "1928 Publisher Ln");
 
 Insert into Document
-VALUES ("9978", "Proceeding 9978", "2015-09-09", "9978")
+VALUES ("9978", "Proceeding 9978", "2015-09-09", "9978");
 
-INSERT INTO Branch
-VALUES("1111", "Library1", "Newark")
 
 INSERT INTO Copy
-VALUES ("9978", "1", "1111", "NW")
+VALUES ("9978", "1", "1111", "NW");
 
 INSERT INTO Proceedings
-VALUES ("9978", "2019-03-19 03:25:32", "NW", "Jerome")
-
+VALUES ("9978", "2019-03-19 03:25:32", "NW", "Jerome");
 
