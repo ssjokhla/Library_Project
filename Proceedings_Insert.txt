@@ -1,0 +1,228 @@
+INSERT INTO Publisher
+VALUES ("1234", "Publisher 1234", "1234 Publisher Ln")
+
+Insert into Document
+VALUES ("1234", "Proceeding 1234", "2009-05-21", "1234")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("1234", "1", "1111", "NE")
+
+INSERT INTO Proceedings
+VALUES ("1234", "2019-04-27 03:25:32", "NE", "Hodor")
+
+
+//----------------------------------------------------------------------//
+
+
+
+INSERT INTO Publisher
+VALUES ("8960", "Publisher 8960", "8960 Publisher Ln")
+
+Insert into Document
+VALUES ("8960", "Proceeding 8960", "2007-12-21", "8960")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("8960", "1", "8960", "SE")
+
+INSERT INTO Proceedings
+VALUES ("8960", "2018-08-27 03:25:32", "SE", "Riley")
+
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("5200", "Publisher 5200", "5200 Publisher Ln")
+
+Insert into Document
+VALUES ("5200", "Proceeding 5200", "2012-05-21", "5200")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("5200", "1", "1111", "NW")
+
+INSERT INTO Proceedings
+VALUES ("5200", "2019-02-17 03:25:32", "NW", "Samwell")
+
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("1928", "Publisher 1928", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("1928", "Proceeding 1928", "2011-08-22", "1928")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("1928", "1", "1111", "SW")
+
+INSERT INTO Proceedings
+VALUES ("1928", "2019-03-19 03:25:32", "SW", "Jerome")
+
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("1293", "Publisher 1293", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("1293", "Proceeding 1293", "2017-12-15", "1293")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("1293", "1", "1111", "SW")
+
+INSERT INTO Proceedings
+VALUES ("1293", "2019-03-19 03:25:32", "SW", "Jerome")
+
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("1293", "Publisher 1293", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("1293", "Proceeding 1293", "2013-04-07", "1293")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("1293", "1", "1111", "NW")
+
+INSERT INTO Proceedings
+VALUES ("1293", "2019-03-19 03:25:32", "NW", "Jerome")
+
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("9872", "Publisher 9872", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("9872", "Proceeding 9872", "2015-07-14", "9872")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("9872", "1", "1111", "NE")
+
+INSERT INTO Proceedings
+VALUES ("9872", "2019-03-19 03:25:32", "NE", "Jerome")
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("2198", "Publisher 2198", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("2198", "Proceeding 2198", "2011-11-111", "2198")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("2198", "1", "1111", "SW")
+
+INSERT INTO Proceedings
+VALUES ("2198", "2019-03-19 03:25:32", "SW", "Jerome")
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("6876", "Publisher 6876", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("6876", "Proceeding 6876", "2015-09-21", "6876")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("6876", "1", "1111", "NE")
+
+INSERT INTO Proceedings
+VALUES ("6876", "2019-03-19 03:25:32", "NE", "Jerome")
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("5312", "Publisher 5312", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("5312", "Proceeding 5312", "2015-06-06", "5312")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("5312", "1", "1111", "SE")
+
+INSERT INTO Proceedings
+VALUES ("5312", "2019-03-19 03:25:32", "SE", "Jerome")
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("4235", "Publisher 4235", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("4235", "Proceeding 4235", "2015-07-07", "4235")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("4235", "1", "1111", "SW")
+
+INSERT INTO Proceedings
+VALUES ("4235", "2019-03-19 03:25:32", "SW", "Jerome")
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("2351", "Publisher 2351", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("2351", "Proceeding 2351", "2015-08-08", "2351")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("2351", "1", "1111", "NE")
+
+INSERT INTO Proceedings
+VALUES ("2351", "2019-03-19 03:25:32", "NE", "Jerome")
+
+//----------------------------------------------------------------------//
+
+INSERT INTO Publisher
+VALUES ("9978", "Publisher 9978", "1928 Publisher Ln")
+
+Insert into Document
+VALUES ("9978", "Proceeding 9978", "2015-09-09", "9978")
+
+INSERT INTO Branch
+VALUES("1111", "Library1", "Newark")
+
+INSERT INTO Copy
+VALUES ("9978", "1", "1111", "NW")
+
+INSERT INTO Proceedings
+VALUES ("9978", "2019-03-19 03:25:32", "NW", "Jerome")
+
+
