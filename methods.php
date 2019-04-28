@@ -92,6 +92,7 @@ function docCheckout($readerID, $docID, $copyNO, $libID)
 	
 	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'BDTime') 
 VALUES ($readerID, $docID, $copyNO, $libID, $currDT)";	
+	mysqli_query($con, $query);
 }
 
 function docReturn()
@@ -105,6 +106,51 @@ function docReturn()
 VALUES ($readerID, $docID, $copyNO, $libID, $currDT)";
 }
 
+function docReserve($readerID, $docID, $copyNO, $libID)
+{
+	$currDT = NOW();
+	
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "SELECT * from numReserved WHERE ReaderID = '$readerID'";
+	$result1 = mysqli_query($con, $query2);
+	if($result1 < 10)
+	{
+		$query2 = "INSERT into Reserves ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'DTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', '$currDT')";
+		mysqli_query($con, $query2);
+	}
+	else
+	{
+		echo "The user already has 10 reservatoins.";
+	}
+}
+
+function checkFine($Bornumber, $readerID, $BDTime, $RDTime)
+{
+	$diffTime = 0;
+	$fine = 0;
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "Select BDTime from Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
+	$BDTime = mysqli_query($con, $query1);
+	
+	$query2 = "Select RDTime from Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
+	$RDTime = mysqli_query($con, $query2);
+	
+	$diffTime = RDTime - BDTime
+	if($diffTime > 20)
+	{
+		//Floor apparently rounds the number down to the nearest whole number
+		$fine = (floor($diffTime) * .20);
+	}
+	else
+	{
+		$fine = 0;
+	}
+	
+}
 //Administrative Funtions Menu
 
 ?>
