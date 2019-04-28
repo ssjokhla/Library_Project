@@ -1,85 +1,83 @@
-INSERT INTO Journal_Issue VALUES("2001", "1","a new general approach for designing exact exponential-time algorithms for subset problems.")
-INSERT INTO Journal_Issue VALUES("2002","2", "We develop a systematic approach, based on convex programming.")
-INSERT INTO Journal_Issue VALUES("2003","3" , "introduce a new approach to approximate counting in bounded degree systems.")
-INSERT INTO Journal_Issue VALUES("2004","4" , "provides a forum for the dissemination of new research results in the rapidly growing field of computer vision.")
-INSERT INTO Journal_Issue VALUES("2005","5", "extraction of knowable aspects from many types of data.")
-INSERT INTO Journal_Issue VALUES("2006","6", "peer-reviewed journal on archival science.")
-INSERT INTO Journal_Issue VALUES("2007","7", "explores the legacy of the influential HYPO system of Rissland and Ashley.")
-INSERT INTO Journal_Issue VALUES("2008","8", "publish the articles on pattern analysis and recognition in selected areas of Computer vision and image processing.")
-INSERT INTO Journal_Issue VALUES("2009","9", "publish the articles and research paper that present novel insights in all area of computational intelligenc.")
-INSERT INTO Journal_Issue VALUES("2010","10", " publishes high quality technical papers in the theory, design and application of fuzzy systems.")
-INSERT INTO Journal_Issue VALUES("2011","11", "present cutting edge articles in all aspects of big data analytics.")
-INSERT INTO Journal_Issue VALUES("2012","12", "It provides in-depth coverage of the latest advances in the closely related fields of data science and data engineering.")
+INSERT INTO Branch VALUES("601", "Van Houten", "Newark");
 
-INSERT INTO Journal_Volume VALUES("2001","66","3001","2001")
-INSERT INTO Journal_Volume VALUES("2002","66","3002","2002")
-INSERT INTO Journal_Volume VALUES("2003","66","3003","2003")
-INSERT INTO Journal_Volume VALUES("2004","21","3004","2004")
-INSERT INTO Journal_Volume VALUES("2005","2","3005","2005")
-INSERT INTO Journal_Volume VALUES("2006","12","3006","2006")
-INSERT INTO Journal_Volume VALUES("2007","12","3007","2007")
-INSERT INTO Journal_Volume VALUES("2008","1","3008","2008")
-INSERT INTO Journal_Volume VALUES("2009","6","3009","2009")
-INSERT INTO Journal_Volume VALUES("2010","13","3010","2010")
-INSERT INTO Journal_Volume VALUES("2011","126","3011","2011")
-INSERT INTO Journal_Volume VALUES("2012","80","3012","2012")
+INSERT INTO Publisher VALUES("4001", "Journal of ACM" , "New York");
+INSERT INTO Publisher VALUES("4002", "Springer" , "New York");
+INSERT INTO Publisher VALUES("4003", "IEEE" , "New York");
 
-INSERT INTO Cheif_Editor VALUES("3001", "Eva Tardos")
-INSERT INTO Cheif_Editor VALUES("3002", "Mahdi Cheraghchi")
-INSERT INTO Cheif_Editor VALUES("3003", "Ankur Moitra")
-INSERT INTO Cheif_Editor VALUES("3004", "M. Hebert")
-INSERT INTO Cheif_Editor VALUES("3005", "M. Vichi")
-INSERT INTO Cheif_Editor VALUES("3006", "K. Anderson")
-INSERT INTO Cheif_Editor VALUES("3007", "K.D. Ashley")
-INSERT INTO Cheif_Editor VALUES("3008", "Sven Dickinson")
-INSERT INTO Cheif_Editor VALUES("3009", "Hisao Ishibuchi")
-INSERT INTO Cheif_Editor VALUES("3010", "Jonathan Garibaldi")
-INSERT INTO Cheif_Editor VALUES("3011", "Amir Hussain")
-INSERT INTO Cheif_Editor VALUES("3012", "X. S. Wang")
+INSERT INTO Document VALUES ("2001", "Exact Algorithms via Monotone Local Search", "2019-04-02", "4001");
+INSERT INTO Document VALUES ("2002", "Capacity Upper Bounds for Deletion-type Channels", "2019-04-02", "4001");
+INSERT INTO Document VALUES ("2003", "Approximate Counting and inference in Graphical Methods", "2019-04-03", "4001");
+INSERT INTO Document VALUES ("2004", "International Journal of Computer Vision", "2019-04-03", "4002");
+INSERT INTO Document VALUES ("2005", "Advances in Data Analysis and Classification", "2019-04-07", "4002");
+INSERT INTO Document VALUES ("2006", "Archival Science", "2019-04-07", "4002");
+INSERT INTO Document VALUES ("2007", "Artificial Intelligence and Law", "2019-04-09", "4002");
+INSERT INTO Document VALUES ("2008", "Transcaction on Pattern Analysis and Machine Intelligence", "2017-04-09", "4003");
+INSERT INTO Document VALUES ("2009", "Computational Intelligence Magazine", "2014-04-07", "4003");
+INSERT INTO Document VALUES ("2010", "Transaction on Fuzzy system", "2014-04-07", "4003");
+INSERT INTO Document VALUES ("2011", "Big Data Analytics", "2014-04-07", "4002");
+INSERT INTO Document VALUES ("2012", "Data Science and Engineering", "2014-04-07", "4002");
 
-INSERT INTO Inv_Editor VALUES("2001","1","Fedor V. fomin")
-INSERT INTO Inv_Editor VALUES("2002","2","Serge Gaspers")
-INSERT INTO Inv_Editor VALUES("2003","3","Daniel Lokshtanov")
-INSERT INTO Inv_Editor VALUES("2004","4","X. Tang")
-INSERT INTO Inv_Editor VALUES("2005","5","A. Okada")
-INSERT INTO Inv_Editor VALUES("2006","6","G. Oliver")
-INSERT INTO Inv_Editor VALUES("2007","7","T. Bench-Capon")
-INSERT INTO Inv_Editor VALUES("2008","8","Kristen Grauman")
-INSERT INTO Inv_Editor VALUES("2009","9","Mark David")
-INSERT INTO Inv_Editor VALUES("2010","10","Hamid R. Berenji")
-INSERT INTO Inv_Editor VALUES("2011","11","Asim Roy")
-INSERT INTO Inv_Editor VALUES("2012","12","Elisa Bertino")
+INSERT INTO Journal_Volume VALUES("2001","66","3001");
+INSERT INTO Journal_Volume VALUES("2002","66","3002");
+INSERT INTO Journal_Volume VALUES("2003","66","3003");
+INSERT INTO Journal_Volume VALUES("2004","21","3004");
+INSERT INTO Journal_Volume VALUES("2005","2","3005");
+INSERT INTO Journal_Volume VALUES("2006","12","3006");
+INSERT INTO Journal_Volume VALUES("2007","12","3007");
+INSERT INTO Journal_Volume VALUES("2008","1","3008");
+INSERT INTO Journal_Volume VALUES("2009","6","3009");
+INSERT INTO Journal_Volume VALUES("2010","13","3010");
+INSERT INTO Journal_Volume VALUES("2011","126","3011");
+INSERT INTO Journal_Volume VALUES("2012","80","3012");
 
-INSERT INTO Document VALUES ("2001", "Exact Algorithms via Monotone Local Search", "2019-04-02", "4001")
-INSERT INTO Document VALUES ("2002", "Capacity Upper Bounds for Deletion-type Channels", "2019-04-02", "4001")
-INSERT INTO Document VALUES ("2003", "Approximate Counting and inference in Graphical Methods", "2019-04-03", "4001")
-INSERT INTO Document VALUES ("2004", "International Journal of Computer Vision", "2019-04-03", "4002")
-INSERT INTO Document VALUES ("2005", "Advances in Data Analysis and Classification", "2019-04-07", "4002")
-INSERT INTO Document VALUES ("2006", "Archival Science", "2019-04-07", "4002")
-INSERT INTO Document VALUES ("2007", "Artificial Intelligence and Law", "2019-04-09", "4002")
-INSERT INTO Document VALUES ("2008", "Transcaction on Pattern Analysis and Machine Intelligence", "2017-04-09", "4003")
-INSERT INTO Document VALUES ("2009", "Computational Intelligence Magazine", "2014-04-07", "4003")
-INSERT INTO Document VALUES ("2010", "Transaction on Fuzzy system", "2014-04-07", "4003")
-INSERT INTO Document VALUES ("2011", "Big Data Analytics", "2014-04-07", "4002")
-INSERT INTO Document VALUES ("2012", "Data Science and Engineering", "2014-04-07", "4002")
+INSERT INTO Journal_Issue VALUES("2001", "1","a new general approach for designing exact exponential-time algorithms for subset problems.");
+INSERT INTO Journal_Issue VALUES("2002","2", "We develop a systematic approach, based on convex programming.");
+INSERT INTO Journal_Issue VALUES("2003","3" , "introduce a new approach to approximate counting in bounded degree systems.");
+INSERT INTO Journal_Issue VALUES("2004","4" , "provides a forum for the dissemination of new research results in the rapidly growing field of computer vision.");
+INSERT INTO Journal_Issue VALUES("2005","5", "extraction of knowable aspects from many types of data.");
+INSERT INTO Journal_Issue VALUES("2006","6", "peer-reviewed journal on archival science.");
+INSERT INTO Journal_Issue VALUES("2007","7", "explores the legacy of the influential HYPO system of Rissland and Ashley.");
+INSERT INTO Journal_Issue VALUES("2008","8", "publish the articles on pattern analysis and recognition in selected areas of Computer vision and image processing.");
+INSERT INTO Journal_Issue VALUES("2009","9", "publish the articles and research paper that present novel insights in all area of computational intelligenc.");
+INSERT INTO Journal_Issue VALUES("2010","10", " publishes high quality technical papers in the theory, design and application of fuzzy systems.");
+INSERT INTO Journal_Issue VALUES("2011","11", "present cutting edge articles in all aspects of big data analytics.");
+INSERT INTO Journal_Issue VALUES("2012","12", "It provides in-depth coverage of the latest advances in the closely related fields of data science and data engineering.");
 
-INSERT INTO Pubisher VALUES("4001", "Journal of ACM" , "New York")
-INSERT INTO Pubisher VALUES("4002", "Springer" , "New York")
-INSERT INTO Pubisher VALUES("4003", "IEEE" , "New York")
+INSERT INTO Chief_Editor VALUES("3001", "Eva Tardos");
+INSERT INTO Chief_Editor VALUES("3002", "Mahdi Cheraghchi");
+INSERT INTO Chief_Editor VALUES("3003", "Ankur Moitra");
+INSERT INTO Chief_Editor VALUES("3004", "M. Hebert");
+INSERT INTO Chief_Editor VALUES("3005", "M. Vichi");
+INSERT INTO Chief_Editor VALUES("3006", "K. Anderson");
+INSERT INTO Chief_Editor VALUES("3007", "K.D. Ashley");
+INSERT INTO Chief_Editor VALUES("3008", "Sven Dickinson");
+INSERT INTO Chief_Editor VALUES("3009", "Hisao Ishibuchi");
+INSERT INTO Chief_Editor VALUES("3010", "Jonathan Garibaldi");
+INSERT INTO Chief_Editor VALUES("3011", "Amir Hussain");
+INSERT INTO Cheif_Editor VALUES("3012", "X. S. Wang");
 
-INSERT INTO Copy VALUES("2001", "501", "601" , "NE", "2001","601")
-INSERT INTO Copy VALUES("2002", "502", "601" , "NE", "2002","601")
-INSERT INTO Copy VALUES("2003", "503", "601" , "NE", "2003","601")
-INSERT INTO Copy VALUES("2004", "504", "601" , "NE", "2004","601")
-INSERT INTO Copy VALUES("2005", "505", "601" , "NE", "2005","601")
-INSERT INTO Copy VALUES("2006", "506", "601" , "NE", "2006","601")
-INSERT INTO Copy VALUES("2007", "507", "601" , "NE", "2007","601")
-INSERT INTO Copy VALUES("2008", "508", "601" , "NE", "2008","601")
-INSERT INTO Copy VALUES("2009", "509", "601" , "NE", "2008","601")
-INSERT INTO Copy VALUES("2010", "510", "601" , "NE", "2010","601")
-INSERT INTO Copy VALUES("2011", "511", "601" , "NE", "2011","601")
-INSERT INTO Copy VALUES("2012", "512", "601" , "NE", "2012","601")
+INSERT INTO Inv_Editor VALUES("2001","1","Fedor V. fomin");
+INSERT INTO Inv_Editor VALUES("2002","2","Serge Gaspers");
+INSERT INTO Inv_Editor VALUES("2003","3","Daniel Lokshtanov");
+INSERT INTO Inv_Editor VALUES("2004","4","X. Tang");
+INSERT INTO Inv_Editor VALUES("2005","5","A. Okada");
+INSERT INTO Inv_Editor VALUES("2006","6","G. Oliver");
+INSERT INTO Inv_Editor VALUES("2007","7","T. Bench-Capon");
+INSERT INTO Inv_Editor VALUES("2008","8","Kristen Grauman");
+INSERT INTO Inv_Editor VALUES("2009","9","Mark David");
+INSERT INTO Inv_Editor VALUES("2010","10","Hamid R. Berenji");
+INSERT INTO Inv_Editor VALUES("2011","11","Asim Roy");
+INSERT INTO Inv_Editor VALUES("2012","12","Elisa Bertino");
 
-INSERT INTO Branch VALUES("601", "Van Houten", "Newark")
-
- 
+INSERT INTO Copy VALUES("2001", "501", "601" , "NE", "2001","601");
+INSERT INTO Copy VALUES("2002", "502", "601" , "NE", "2002","601");
+INSERT INTO Copy VALUES("2003", "503", "601" , "NE", "2003","601");
+INSERT INTO Copy VALUES("2004", "504", "601" , "NE", "2004","601");
+INSERT INTO Copy VALUES("2005", "505", "601" , "NE", "2005","601");
+INSERT INTO Copy VALUES("2006", "506", "601" , "NE", "2006","601");
+INSERT INTO Copy VALUES("2007", "507", "601" , "NE", "2007","601");
+INSERT INTO Copy VALUES("2008", "508", "601" , "NE", "2008","601");
+INSERT INTO Copy VALUES("2009", "509", "601" , "NE", "2008","601");
+INSERT INTO Copy VALUES("2010", "510", "601" , "NE", "2010","601");
+INSERT INTO Copy VALUES("2011", "511", "601" , "NE", "2011","601");
+INSERT INTO Copy VALUES("2012", "512", "601" , "NE", "2012","601");
