@@ -158,13 +158,24 @@ function printDocs($readerID)
 	mysqli_select_db($con, $mysqlDB);
 	
 	echo "These are the documents that are reserved";
-	$query1 = "Select Title FROM Reader,Reserves,Docuemnt WHERE ReaderID = $readerID";
+	$query1 = "Select Title FROM Reader,Reserves,Docuemnt WHERE ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query1);
 	
 	echo "These are the documents that are borrowed";
-	$query2 = "Select Title FROM Reader,Borrows,Docuemnt WHERE ReaderID = $readerID";
+	$query2 = "Select Title FROM Reader,Borrows,Docuemnt WHERE ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query2);
 }
+
+function printPublisher($pubID)
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	
+	$query1 = "Select DocID, Title FROM Document,Publisher WHERE PublisherID = '$pubID'";
+	$BDTime = mysqli_query($con, $query1);
+}
+
 //Administrative Funtions Menu
 
 ?>
