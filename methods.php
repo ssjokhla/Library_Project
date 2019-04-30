@@ -126,7 +126,7 @@ function docReserve($readerID, $docID, $copyNO, $libID)
 	}
 }
 
-function checkFine($Bornumber, $readerID, $BDTime, $RDTime)
+function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
 {
 	$diffTime = 0;
 	$fine = 0;
@@ -150,6 +150,20 @@ function checkFine($Bornumber, $readerID, $BDTime, $RDTime)
 		$fine = 0;
 	}
 	
+}
+
+function printDocs($readerID)
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	echo "These are the documents that are reserved";
+	$query1 = "Select Title FROM Reader,Reserves,Docuemnt WHERE ReaderID = $readerID";
+	$BDTime = mysqli_query($con, $query1);
+	
+	echo "These are the documents that are borrowed";
+	$query2 = "Select Title FROM Reader,Borrows,Docuemnt WHERE ReaderID = $readerID";
+	$BDTime = mysqli_query($con, $query2);
 }
 //Administrative Funtions Menu
 
