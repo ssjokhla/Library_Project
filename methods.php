@@ -177,5 +177,43 @@ function printPublisher($pubID)
 }
 
 //Administrative Funtions Menu
-
+function addBook
+(
+//Publisher (pub)
+$pubPubID, $pubName, $pubAddress,
+//Document (doc)
+$docDocID, $docTitle, $docPDate, $docPubID,
+//Branch (branch)
+$branchLibID, $branchLName, $branchLLocation,
+//Copy (copy)
+$copyDocID, $copyCopyNO, $copyLibID, $copyPosition,
+//Author (author)
+$authorAuthorID, $authorDocID,
+//Book (book)
+$bookDocID, $bookISBN,
+//Writes (writes)
+$writeAuthorID, $writeDocID
+)
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
+	$queryDocument = "INSERT INTO Docuemnt VALUES ('$docDocID', '$docTitle', '$docPDate', '$docPubID')";
+	$queryBranch = "INSERT INTO Branch VALUES ('$branchLibID', '$branchLName', '$branchLLocation')";
+	$queryCopy = "INSERT INTO Copy VALUES ('$copyDocID', '$copyCopyNO', '$copyLibID', '$copyPosition')";
+	$queryAuthor = "INSERT INTO Author VALUES ('$authorAuthorID', '$authorDocID')";
+	$queryBook = "INSERT INTO Book VALUES ('$bookDocID', '$bookISBN')";
+	$queryWrites = "INSERT INTO Writes VALUES ('$writeAuthorID', '$writeDocID')";
+	
+	mysqli_query($con, $queryPublisher);
+	mysqli_query($con, $queryDocument);
+	mysqli_query($con, $queryBranch);
+	mysqli_query($con, $queryCopy);
+	mysqli_query($con, $queryAuthor);
+	mysqli_query($con, $queryBook);
+	mysqli_query($con, $queryWrites);
+	
+}
+	
 ?>
