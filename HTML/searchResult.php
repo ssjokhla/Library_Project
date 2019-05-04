@@ -4,15 +4,15 @@
 <h2>Checking Out</h2>
 <form action="Chckout.php" method="post">
 Reader ID:
-<input type="text" name="ReaderID">
+<input type="text" name="ReaderID"><br>
 Document ID:
-<input type="text" name="DocID">
+<input type="text" name="DocID"><br>
 Copy Number:
-<input type="text" name="CopyNO">
+<input type="text" name="CopyNO"><br>
 Library ID:
 <input type="text" name="LibID">
 <br>
-<input type="submit" value="Login">
+<input type="submit" value="Checkout">
 </form>
 
 <h1>Results Page</h1>
