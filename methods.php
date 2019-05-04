@@ -30,7 +30,7 @@ function checkAdmin($id, $pw)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "SELECT * FROM Admins WHERE username = '$id' and WHERE password = '$pw'";
+	$query = "SELECT * FROM Admins WHERE username = '$id' and password = '$pw'";
 	$result = mysqli_query($con, $query);
 	$rowCount = mysqli_num_rows($result);
 	if($rowCount > 0)
@@ -133,10 +133,10 @@ function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
+	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query1);
 	
-	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
+	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
 	$diffTime = RDTime - BDTime
@@ -295,7 +295,7 @@ function searchDoc($docID, $copyNo, $libID)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and WHERE CopyNO = '$copyNo' and WHERE LibID = '$LibID' and WHERE RDTime = Null";
+	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and CopyNO = '$copyNo' and LibID = '$LibID' and RDTime = Null";
 	$result = mysqli_query($con, $query1);
 	$resultCount = mysqli_num_rows($result)
 	
@@ -353,10 +353,10 @@ function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
+	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query1);
 	
-	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
+	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
 	$diffTime = RDTime - BDTime
