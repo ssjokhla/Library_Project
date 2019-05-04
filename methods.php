@@ -56,7 +56,7 @@ function searchID($input)
 	$query = "SELECT * FROM Document WHERE DocID = '$input'";
 	$result = mysqli_query($con, $s);
 	
-	return $result;
+	echo($result);
 	
 	
 }
@@ -292,6 +292,9 @@ $copyCopyNO, $copyLibID, $copyPosition,
 
 function searchDoc($docID, $copyNo, $libID)
 {
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
 	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and WHERE CopyNO = '$copyNo' and WHERE LibID = '$LibID' and WHERE RDTime = Null";
 	$result = mysqli_query($con, $query1);
 	$resultCount = mysqli_num_rows($result)
@@ -306,4 +309,66 @@ function searchDoc($docID, $copyNo, $libID)
 	}
 }
 
+function addReader($readerID, $rType, $rName, $rAddress)
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "INSERT INTO Reader VALUES('$readerID', '$rtype', '$rName', '$rAddress')";
+	mysqli_query($con, $query1);
+}
+
+function printBranchInfo($libID)
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "SELECT LName,LLocation FROM Branch";
+	mysqli_query($con, $query1);
+}
+
+function frequentBorrowers()
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "SELECT * FROM Borrows ORDERY BY ReaderID DESC limit 10";
+	mysqli_query($con, $query1);
+}
+
+function frequentBorrowedBooks()
+{
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "SELECT * FROM Borrows, Copy, Document ORDERY BY Title DESC limit 10";
+	mysqli_query($con, $query1);
+}
+
+
+function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
+{
+	$diffTime = 0;
+	$fine = 0;
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
+	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
+	$BDTime = mysqli_query($con, $query1);
+	
+	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
+	$RDTime = mysqli_query($con, $query2);
+	
+	$diffTime = RDTime - BDTime
+	if($diffTime > 20)
+	{
+		//Floor apparently rounds the number down to the nearest whole number
+		$fine = (floor($diffTime) * .20);
+	}
+	else
+	{
+		$fine = 0;
+	}
+	
+}
 ?>
