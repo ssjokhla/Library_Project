@@ -1,5 +1,8 @@
 <?php
+session_start();
+
 $ReaderID=$_POST['CardNumber'];
+$_SESSION['CardNumber']=$ReaderID;
 $con = mysqli_connect("localhost", "admin", "password", "Library");
 mysqli_select_db($con, "Library");
 
@@ -14,7 +17,7 @@ $rowCount = mysqli_num_rows($t);
 if($rowCount > 0)
 	{
 		//If there are users log in works
-		echo "Successful Login";
+		//echo "Successful Login";
 	}
 	else
 	{
@@ -29,18 +32,24 @@ if($rowCount > 0)
 
 <h1>Reader Page</h1>
 <h2>Browse</h2>
-<form action="/action_page.php">
-Search:<br>
-<input type="text" name="firstname">
-<br>
-<input type="button" value="Checkout">
-<input type="button" value="Reserve">
+<form action="/searchResult.php" method="post">
+Document ID:<br>
+<input type="text" name="DocID">
+<br><br>
+Title:<br>
+<input type="text" name="Title">
+<br><br>
+Publisher Name:<br>
+<input type="text" name="Pubname">
+<br><br>
+<input type="button" value="Search">
 </form>
 <br>
 
 <br>
 
 <h2>Return</h2>
+Show Documents being borrowed or reserved by user<br>
 <form action="">
 Document ID:<br>
 <input type="text" name="DocID">
