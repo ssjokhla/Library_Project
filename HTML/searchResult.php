@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+
 <h1>Results Page</h1>
 <?php
 include('methods.php');
@@ -25,8 +25,7 @@ $SearchResult = mysqli_query($con, $query);
 
 echo $SerachResult;
 ?>
-
-
+<body>
 <h2>Checking Out</h2>
 <form action="Chckout.php" method="post">
 Reader ID:
