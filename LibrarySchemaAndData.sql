@@ -1,4 +1,5 @@
-
+CREATE DATABASE Library;
+USE Library;
 CREATE TABLE Author (
 	AuthorID int NOT NULL,
 	AName VARCHAR(20) NOT NULL,
@@ -125,7 +126,7 @@ CREATE TABLE Borrows(
 	CopyNO INT NOT NULL,
 	LibID INT NOT NULL,
 	BDTime DATETIME NOT NULL,
-    RDTime DATETIME NOT NULL, 	
+    RDTime DATETIME, 	
 	PRIMARY KEY(BorNO),
 	FOREIGN KEY(ReaderID) REFERENCES Reader(ReaderID),
 	FOREIGN KEY(DocID,CopyNO,LibID) REFERENCES Copy(DocID,CopyNO,LibID)
@@ -685,3 +686,6 @@ INSERT INTO Copy VALUES("2009", "509", "601" , "NE");
 INSERT INTO Copy VALUES("2010", "510", "601" , "NE");
 INSERT INTO Copy VALUES("2011", "511", "601" , "NE");
 INSERT INTO Copy VALUES("2012", "512", "601" , "NE");
+
+INSERT INTO reader VALUES('111111', 'Student', 'Sam Mish', '456 Road');
+INSERT INTO Admins VALUES('Admin', 'Password');
