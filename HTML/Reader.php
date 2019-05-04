@@ -1,5 +1,5 @@
 <?php
-
+$ReaderID=$_POST['CardNumber'];
 $con = mysqli_connect("localhost", "admin", "password", "Library");
 mysqli_select_db($con, "Library");
 
