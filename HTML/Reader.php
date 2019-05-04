@@ -5,6 +5,7 @@ $ReaderID=$_POST['CardNumber'];
 $_SESSION['CardNumber']=$ReaderID;
 $con = mysqli_connect("localhost", "admin", "password", "Library");
 mysqli_select_db($con, "Library");
+echo "BLah";
 
 if (!$con){
 	logError("Connection Failed: " . mysqli_connect_error());
