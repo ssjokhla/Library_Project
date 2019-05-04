@@ -42,7 +42,7 @@ Title:<br>
 Publisher Name:<br>
 <input type="text" name="Pubname">
 <br><br>
-<input type="button" value="Search">
+<input type="submit" value="Search">
 </form>
 <br>
 
@@ -57,10 +57,10 @@ Document ID:<br>
 Copy:<br>
 <input type="Text" name="CopyNum">
 <br>
-<input type="button" value="Return">
+<input type="submit" value="Return">
 </form>
 
-
+<input type="button" onclick=window.location.href='MainPage.html' value="Return">
 
 </body>
 </html>
