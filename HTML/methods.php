@@ -92,6 +92,7 @@ function docCheckout($readerID, $docID, $copyNO, $libID)
 	echo "DB Selected";
 	$query = "INSERT into Borrows (ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('$readerID', '$docID', '$copyNO', '$libID', NOW())";	
 	mysqli_query($con, $query);
+	echo "Query sent";
 }
 
 function docReturn()
