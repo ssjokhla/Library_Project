@@ -139,7 +139,7 @@ function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
-	$diffTime = RDTime - BDTime
+	$diffTime = RDTime - BDTime;
 	if($diffTime > 20)
 	{
 		//Floor apparently rounds the number down to the nearest whole number
