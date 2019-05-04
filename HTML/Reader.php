@@ -8,7 +8,7 @@ if (!$con){
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$s = "select * from Reader where ReaderID = '$ReaderID'"
+$s = "select * from Reader where ReaderID = '$ReaderID'";
 $t = mysqli_query($con, $s);
 $rowCount = mysqli_num_rows($t);
 if($rowCount > 0)
@@ -22,7 +22,7 @@ if($rowCount > 0)
 		echo "Error in logging in";
 		return "Bad Login\n";
 	}
-
+?>
 <!DOCTYPE html>
 <html>
 <body>
