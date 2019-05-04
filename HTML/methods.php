@@ -85,29 +85,24 @@ function searchPubName($input)
 
 function docCheckout($readerID, $docID, $copyNO, $libID)
 {
-	$currDT = NOW();
 	
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'BDTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', '$currDT')";	
+	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'BDTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', 'NOW()')";	
 	mysqli_query($con, $query);
 }
 
 function docReturn()
 {
-	$currDT = NOW();
-	
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'RDTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', '$currDT')";
+	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'RDTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', 'NOW()')";
 }
 
 function docReserve($readerID, $docID, $copyNO, $libID)
 {
-	$currDT = NOW();
-	
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
@@ -115,7 +110,7 @@ function docReserve($readerID, $docID, $copyNO, $libID)
 	$result1 = mysqli_query($con, $query2);
 	if($result1 < 10)
 	{
-		$query2 = "INSERT into Reserves ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'DTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', '$currDT')";
+		$query2 = "INSERT into Reserves ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'DTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', 'NOW()')";
 		mysqli_query($con, $query2);
 	}
 	else
