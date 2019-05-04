@@ -1,5 +1,4 @@
---CREATE DATABASE Library;
---USE Library;
+
 CREATE TABLE Author (
 	AuthorID int NOT NULL,
 	AName VARCHAR(20) NOT NULL,
