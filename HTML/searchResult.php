@@ -3,7 +3,7 @@
 <body>
 <h1>Results Page</h1>
 <?php
-include('methods.php')
+include('methods.php');
 session_start();
 
 $ReaderID=$_SESSION['CardNumber'];
@@ -25,7 +25,7 @@ NATURAL JOIN copy
 NATURAL JOIN publisher
 WHERE Title = '$Title'
 OR docID = '$DocID'
-or PubName = 'PubName';"
+or PubName = 'PubName';";
 
 $SearchResult = mysqli_query($con, $query);
 
