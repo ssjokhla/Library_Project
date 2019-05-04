@@ -19,14 +19,23 @@ if (!$con){
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$query = "SELECT *
-FROM document
-NATURAL JOIN copy
-NATURAL JOIN publisher
-WHERE Title = '$Title'
-OR docID = '$DocID'
-or PubName = 'PubName';";
+$query = "SELECT *FROM documentNATURAL JOIN copyNATURAL JOIN publisherWHERE Title = '$Title'OR docID = '$DocID'or PubName = 'PubName';";
 
 $SearchResult = mysqli_query($con, $query);
 
 echo $SerachResult;
+?>
+
+<h2>Checking Out</h2>
+<form action="Chckout.php" method="post">
+Reader ID:
+<input type="text" name="ReaderID">
+Document ID:
+<input type="text" name="DocID">
+Copy Number:
+<input type="text" name="CopyNO">
+Library ID:
+<input type="text" name="LibID">
+<br>
+<input type="submit" value="Login">
+</form>
