@@ -686,5 +686,5 @@ INSERT INTO Copy VALUES("2010", "510", "601" , "NE");
 INSERT INTO Copy VALUES("2011", "511", "601" , "NE");
 INSERT INTO Copy VALUES("2012", "512", "601" , "NE");
 
-INSERT INTO Reader VALUES('111111', 'Student', 'Sam Mish', '456 Road');
+INSERT INTO Reader VALUES('111111', 'Student', 'Sam Mish', '456 Road', NULL);
 INSERT INTO Admins VALUES('Admin', 'Password');
