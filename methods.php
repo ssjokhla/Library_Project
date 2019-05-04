@@ -91,7 +91,7 @@ function docCheckout($readerID, $docID, $copyNO, $libID)
 	mysqli_select_db($con, $mysqlDB);
 	
 	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'BDTime') 
-VALUES ($readerID, $docID, $copyNO, $libID, $currDT)";	
+VALUES ("$readerID", "$docID", "$copyNO", "$libID", "$currDT")";	
 	mysqli_query($con, $query);
 }
 
@@ -103,7 +103,7 @@ function docReturn()
 	mysqli_select_db($con, $mysqlDB);
 	
 	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'RDTime') 
-VALUES ($readerID, $docID, $copyNO, $libID, $currDT)";
+VALUES ("$readerID", "$docID", "$copyNO", "$libID", "$currDT")";
 }
 
 function docReserve($readerID, $docID, $copyNO, $libID)
@@ -139,7 +139,7 @@ function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
-	$diffTime = RDTime - BDTime;
+	$diffTime = RDTime - BDTime
 	if($diffTime > 20)
 	{
 		//Floor apparently rounds the number down to the nearest whole number
