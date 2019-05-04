@@ -101,8 +101,7 @@ function docReturn()
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'RDTime') 
-VALUES ("$readerID", "$docID", "$copyNO", "$libID", "$currDT")";
+	$query = "INSERT into Borrows ('ReaderID', 'DocID', 'CopyNO', 'LibID', 'RDTime') VALUES ('$readerID', '$docID', '$copyNO', '$libID', '$currDT')";
 }
 
 function docReserve($readerID, $docID, $copyNO, $libID)
@@ -138,7 +137,7 @@ function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
-	$diffTime = RDTime - BDTime
+	$diffTime = $RDTime - $BDTime;
 	if($diffTime > 20)
 	{
 		//Floor apparently rounds the number down to the nearest whole number
@@ -217,7 +216,7 @@ $writeAuthorID, $writeDocID
 	
 }
 
-fucntion addProceeding
+function addProceeding
 (
 //Publisher (pub)
 $pubPubID, $pubName, $pubAddress,
@@ -253,15 +252,15 @@ $pubPubID, $pubName, $pubAddress,
 //Document (doc)
 $docID, $docTitle, $docPDate,
 //Journal_Volume
-$jVolume, $editorID
+$jVolume, $editorID,
 //Journal_Issue
-$issueNo, $scope
+$issueNo, $scope,
 //Chief_Editor
-$eName
+$eName,
 //Inv_Editor
-$iEName
+$iEName,
 //Copy (copy)
-$copyCopyNO, $copyLibID, $copyPosition,
+$copyCopyNO, $copyLibID, $copyPosition
 
 )
 {
@@ -296,7 +295,7 @@ function searchDoc($docID, $copyNo, $libID)
 	
 	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and CopyNO = '$copyNo' and LibID = '$LibID' and RDTime = Null";
 	$result = mysqli_query($con, $query1);
-	$resultCount = mysqli_num_rows($result)
+	$resultCount = mysqli_num_rows($result);
 	
 	if($resultCount > 0)
 	{
@@ -358,7 +357,7 @@ function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
-	$diffTime = RDTime - BDTime
+	$diffTime = $RDTime - $BDTime;
 	if($diffTime > 20)
 	{
 		//Floor apparently rounds the number down to the nearest whole number
