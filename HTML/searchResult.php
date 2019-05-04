@@ -19,7 +19,7 @@ if (!$con){
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$query = "SELECT *FROM documentNATURAL JOIN copyNATURAL JOIN publisherWHERE Title = '$Title'OR docID = '$DocID'or PubName = 'PubName';";
+$query = "SELECT * FROM document NATURAL JOIN copy NATURAL JOIN publisher WHERE Title = '$Title' OR docID = '$DocID' or PubName = 'PubName';";
 
 $SearchResult = mysqli_query($con, $query);
 
