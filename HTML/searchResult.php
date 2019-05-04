@@ -2,7 +2,7 @@
 <html>
 <body>
 <h2>Checking Out</h2>
-<form action="Chckout.php" method="post">
+<form action="Checkout.php" method="post">
 Reader ID:
 <input type="text" name="ReaderID"><br>
 Document ID:
