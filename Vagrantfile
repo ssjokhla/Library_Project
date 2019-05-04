@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
 		sudo apt-get install mysql-server -y
 		sudo apt-get install apache2 -y
 		sudo apt-get install php libapache2-mod-php -y
+		sudo apt-get install php-mysqli -y
 		
 		
 		#https://askubuntu.com/questions/668734/the-requested-url-phpmyadmin-was-not-found-on-this-server
