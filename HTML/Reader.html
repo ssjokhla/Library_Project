@@ -1,3 +1,28 @@
+<?php
+
+$con = mysqli_connect("localhost", "admin", "password", "Library");
+mysqli_select_db($con, "Library");
+
+if (!$con){
+	logError("Connection Failed: " . mysqli_connect_error());
+	die("Connection failed: " . mysqli_connect_error());
+}
+
+$s = "select * from Reader where ReaderID = '$ReaderID'"
+$t = mysqli_query($con, $s);
+$rowCount = mysqli_num_rows($t);
+if($rowCount > 0)
+	{
+		//If there are users log in works
+		echo "Successful Login";
+	}
+	else
+	{
+		//If there are 0 entries then log in fails
+		echo "Error in logging in";
+		return "Bad Login\n";
+	}
+
 <!DOCTYPE html>
 <html>
 <body>
