@@ -30,7 +30,7 @@ function checkAdmin($id, $pw)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "select * from Admins where username = '$id' and password = '$pw'";
+	$query = "SELECT * FROM Admins WHERE username = '$id' and WHERE password = '$pw'";
 	$result = mysqli_query($con, $query);
 	$rowCount = mysqli_num_rows($result);
 	if($rowCount > 0)
@@ -53,7 +53,7 @@ function searchID($input)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "SELECT * from Document WHERE DocID = '$input'";
+	$query = "SELECT * FROM Document WHERE DocID = '$input'";
 	$result = mysqli_query($con, $s);
 	
 	return $result;
@@ -66,7 +66,7 @@ function searchTitle($input)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "SELECT * from Document WHERE Title = '$input'";
+	$query = "SELECT * FROM Document WHERE Title = '$input'";
 	$result = mysqli_query($con, $s);
 	
 	return $result;
@@ -77,7 +77,7 @@ function searchPubName($input)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "SELECT * from Document,Publisher WHERE Pubname = '$input'";
+	$query = "SELECT * FROM Document,Publisher WHERE Pubname = '$input'";
 	$result = mysqli_query($con, $s);
 	
 	return $result;
@@ -133,10 +133,10 @@ function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query1 = "Select BDTime from Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
+	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query1);
 	
-	$query2 = "Select RDTime from Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
+	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND WHERE ReaderID = '$readerID'";
 	$RDTime = mysqli_query($con, $query2);
 	
 	$diffTime = RDTime - BDTime
@@ -288,6 +288,22 @@ $copyCopyNO, $copyLibID, $copyPosition,
 	mysqli_query($con, $queryInv_Editor);
 	mysqli_query($con, $queryCopy);
 	
+}
+
+function searchDoc($docID, $copyNo, $libID)
+{
+	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and WHERE CopyNO = '$copyNo' and WHERE LibID = '$LibID' and WHERE RDTime = Null";
+	$result = mysqli_query($con, $query1);
+	$resultCount = mysqli_num_rows($result)
+	
+	if($resultCount > 0)
+	{
+		echo "Status is available";
+	}
+	else
+	{
+		echo "Book has been borrowed";
+	}
 }
 
 ?>
