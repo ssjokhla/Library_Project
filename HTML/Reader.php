@@ -33,9 +33,6 @@ if($rowCount > 0)
 <h1>Reader Page</h1>
 <h2>Browse</h2>
 <form action="/searchResult.php" method="post">
-Borrow Number:<br>
-<input type="text" name="BorNO">
-<br><br>
 Document ID:<br>
 <input type="text" name="DocID">
 <br><br>
