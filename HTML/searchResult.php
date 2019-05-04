@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+<body>
+<h2>Checking Out</h2>
+<form action="Chckout.php" method="post">
+Reader ID:
+<input type="text" name="ReaderID">
+Document ID:
+<input type="text" name="DocID">
+Copy Number:
+<input type="text" name="CopyNO">
+Library ID:
+<input type="text" name="LibID">
+<br>
+<input type="submit" value="Login">
+</form>
 
 <h1>Results Page</h1>
 <?php
@@ -25,19 +39,5 @@ $SearchResult = mysqli_query($con, $query);
 
 echo $SerachResult;
 ?>
-<body>
-<h2>Checking Out</h2>
-<form action="Chckout.php" method="post">
-Reader ID:
-<input type="text" name="ReaderID">
-Document ID:
-<input type="text" name="DocID">
-Copy Number:
-<input type="text" name="CopyNO">
-Library ID:
-<input type="text" name="LibID">
-<br>
-<input type="submit" value="Login">
-</form>
 
 </html>
