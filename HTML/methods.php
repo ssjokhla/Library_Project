@@ -188,8 +188,7 @@ $copyCopyNO, $copyPosition,
 //Author (author)
 $authorAuthorID,
 //Book (book)
-$bookISBN,
-
+$bookISBN
 )
 {
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
