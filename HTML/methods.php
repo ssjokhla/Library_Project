@@ -161,6 +161,7 @@ function computeFine($Bornumber)
 {
 	echo "<br>Method hit";
 	echo "<br>Bornumber is: ".$Bornumber;
+	echo "<br>";
 	$fine = 0;
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
@@ -174,31 +175,48 @@ function computeFine($Bornumber)
 	
 	$date1 = mysqli_query($con, $queryd1);
 	$date2 = mysqli_query($con, $queryd2);
-	echo "Date1 Object".get_object_vars($date1);
 
-	$strd1 = strtotime($date1);
-	echo "<br>String is:".$strd1;
-	if($date2 == 0)
+	$strDate1 = "";
+	$strDate2 = "";
+        if (mysqli_num_rows($date1) != 0)
+        {	
+             while($rows = mysqli_fetch_array($date1,MYSQLI_ASSOC))
+		{
+			$strDate1 = $rows['BDTime'];
+			echo "String Date1: ".$strDate1;
+			echo "<br>";
+               	}
+        }
+
+	if (mysqli_num_rows($date2) != 0)
+        {
+             while($row = mysqli_fetch_array($date2,MYSQLI_ASSOC))
+             {
+		     $strDate2 = $row['NOW()'];
+		     echo "String Date2: ".$strDate2;
+		     echo "<br>";
+             }
+        }
+
+
+	//$strd1 = strtotime($date1);
+	$fine = 0;
+	$diff = 20;
+	$sstrDate1 = strtotime($strDate1);
+	echo "THE DATE STRING FOR D1 IS: ".$sstrDate1;
+	$sstrDate2 = strtotime($strDate2);
+	echo "<br>THE CURRENT DATE STRING IS: ".$sstrDate2;
+	$diff = abs($sstrDate2 - $sstrDate1);
+	echo "<br> The Difference is: ".$diff;
+	$diffDays = floor($diff/86400);
+	echo "<br>The difference in days is : ".$diffDays;
+	if($diffDays < 20)
 	{
 		$fine = 0;
 	}
 	else
 	{
-		$strDate1 = strtotime($date1);
-		$strDate2 = strtotime($date2);
-		$diff = abs($strDate2 - $strDate1);
-		
-		$years = floor($diff/(365*60*60*24)); 
-		$months = floor(($diff-$years*365*60*60*24)/(30*60*60*24));
-		$days = floor(($diff-$years*365*60*60*24-$months*30*60*60*24)/ (60*60*24));
-		if($days < 20)
-		{
-			$fine = 0;
-		}
-		else
-		{
-			$fine = $days*.20;
-		}
+		$fine = $diffDays*.20;
 	}
 	echo "<br>Fine is: $" . $fine;
 }
