@@ -700,4 +700,7 @@ INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('111
 INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1113', '111113', '1115', '1', '1112', NOW());
 INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1114', '111113', '1119', '1', '1112', NOW());
 
+INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime, RDTime) VALUES ('1115', '111113', '1119', '1', '1112', '2019-03-05 17:20:42', NOW());
+
+
 INSERT INTO Admins VALUES('Admin', 'Password');

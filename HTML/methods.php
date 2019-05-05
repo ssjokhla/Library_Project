@@ -125,30 +125,40 @@ function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
 	}
 }
 
-function computeFine($Bornumber, $readerID, $BDTime, $RDTime)
+function computeFine($Bornumber)
 {
-	$diffTime = 0;
 	$fine = 0;
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
-	$BDTime = mysqli_query($con, $query1);
+	$queryd1 = "SELECT BDTime FROM Borrows WHERE BorNO = '$Bornumber'";
+	$queryd2 = "SELECT NOW()";
 	
-	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND  ReaderID = '$readerID'";
-	$RDTime = mysqli_query($con, $query2);
+	$date1 = mysqli_query($con, $queryd1);
+	$date2 = mysqli_query($con, $queryd2);
 	
-	$diffTime = $RDTime - $BDTime;
-	if($diffTime > 20)
-	{
-		//Floor apparently rounds the number down to the nearest whole number
-		$fine = (floor($diffTime) * .20);
-	}
-	else
+	if($date2 == 0)
 	{
 		$fine = 0;
 	}
-	
+	else
+	{
+		$strDate1 = strtotime($date1);
+		$strDate2 = strtotime($date2);
+		$diff = abs($strDate2 - $strDate1);
+		
+		$years = floor($diff/(365*60*60*24)); 
+		$months = floor(($diff-$years*365*60*60*24)/(30*60*60*24));
+		$days = floor(($diff-$years*365*60*60*24-$months*30*60*60*24)/ (60*60*24));
+		if($days < 20)
+		{
+			$fine = 0;
+		}
+		else
+		{
+			$fine = $days*.20;
+		}
+	}
 }
 
 function printDocs($readerID)
