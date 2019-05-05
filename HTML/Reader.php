@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>Reader Page</h1>
-<h2>Browse</h2>
-<form action="/searchResult.php" method="post">
-Document ID:<br>
-<input type="text" name="DocID">
-<br><br>
-Title:<br>
-<input type="text" name="Title">
-<br><br>
-Publisher Name:<br>
-<input type="text" name="Pubname">
-<br><br>
-<input type="submit" value="Search">
-</form>
-<br>
-
-<br>
 <?php
 session_start();
 
@@ -31,6 +10,9 @@ if (!$con){
 	logError("Connection Failed: " . mysqli_connect_error());
 	die("Connection failed: " . mysqli_connect_error());
 }
+
+echo "<h1>Reader Page</h1><br>";
+echo "<h2>Borrowed Books</h2>";
 
 $s = "select * from Reader where ReaderID = '$ReaderID'";
 $t = mysqli_query($con, $s);
@@ -78,6 +60,26 @@ if (mysqli_num_rows($result) != 0)
 	
 	
 ?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Browse</h2>
+<form action="/searchResult.php" method="post">
+Document ID:<br>
+<input type="text" name="DocID">
+<br><br>
+Title:<br>
+<input type="text" name="Title">
+<br><br>
+Publisher Name:<br>
+<input type="text" name="Pubname">
+<br><br>
+<input type="submit" value="Search">
+</form>
+<br>
+
+<br>
 <br>
 <h2>Return</h2>
 Show Documents being borrowed or reserved by user<br><br>
