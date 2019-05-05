@@ -83,13 +83,15 @@ function searchPubName($input)
 	return $result;
 }
 
-function docCheckout($readerID, $docID, $copyNO, $libID)
+function docCheckout($BorNO, $readerID, $docID, $copyNO, $libID)
 {
 	
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	echo "Connected";
-	mysqli_select_db($con, $mysqlDB);
-	echo "DB Selected";
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
+	}
 	$query = "INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1111', '111111', '1111', '1', '1111', NOW())";
 	//$query = "INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('$BorNO', '$readerID', '$docID', '$copyNO', '$libID', NOW())";	
 	mysqli_query($con, $query);
