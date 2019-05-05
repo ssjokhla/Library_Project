@@ -144,17 +144,8 @@ function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query1 = "SELECT * from numReserved WHERE ReaderID = '$readerID'";
-	$result1 = mysqli_query($con, $query2);
-	if($result1 < 10)
-	{
 		$query = "INSERT into Reserves (ResNO, ReaderID, DocID, CopyNO, LibID, DTime) VALUES ('$ResNO', '$readerID', '$docID', '$copyNO', '$libID', NOW())";
-		mysqli_query($con, $query2);
-	}
-	else
-	{
-		echo "The user already has 10 reservatoins.";
-	}
+		mysqli_query($con, $query);
 }
 
 function computeFine($Bornumber)
