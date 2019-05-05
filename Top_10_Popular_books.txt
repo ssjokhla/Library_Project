@@ -1,0 +1,12 @@
+select * 
+from Borrows
+ left join Reserves on Borrows.ReaderID = Reserves.ReaderID
+
+union
+
+select * 
+from Borrows  
+right join Reserves on Borrows.ReaderID = Reserves.ReaderID
+where extract(year from BDtime)
+limit 10; 
+
