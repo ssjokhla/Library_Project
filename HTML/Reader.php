@@ -72,6 +72,7 @@ if (mysqli_num_rows($result) != 0)
 
 
 
+
 	
 
 	
@@ -80,18 +81,27 @@ if (mysqli_num_rows($result) != 0)
 <br>
 <h2>Return</h2>
 Show Documents being borrowed or reserved by user<br><br>
-<form action="Return.php">
-Document ID:<br>
-<input type="text" name="DocID">
-<br><br>
-Copy:<br>
-<input type="Text" name="CopyNum">
-<br>
-LibID:<br>
-<input type="Text" name="LibID">
-<br><br>
-<input type="submit" value="Return">
-</form>
+<form action="Return.php" method="post">
+Borrow Number:<br>
+<input type="text" name="BorNO">
+<input type="submit" name="Return">
+</form><br><br>
+
+<h2>Check Fine</h2>
+<form action="CheckFine.php" method="post">
+Borrow Number:<br>
+<input type="text" name="BorNO">
+<input type="submit" value="Check Fine">
+</form><br><br>
+
+<h2>Search Publisher</h2>
+<form action="SearchPublisher.php" method="post">
+Publisher:<br>
+<input type="text" name="PubName">
+<input type="submit" value="Search">
+</form><br><br>
+
+
 <br><br>
 <input type="button" onclick=window.location.href='MainPage.html' value="Back">
 
