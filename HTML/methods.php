@@ -104,7 +104,7 @@ function docReturn($Bornumber)
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "UPDATE Borrows SET RDTime = NOW() WHERE BorNO = '$Bornumber'";
+	$query = "UPDATE Borrows SET RDTime = NOW() WHERE BorNO = $Bornumber";
 	mysqli_query($con,$query);
 	echo "Query Sent";
 }
