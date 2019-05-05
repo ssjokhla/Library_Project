@@ -34,7 +34,7 @@ if($rowCount > 0)
 			   
 			            <input type = button value = Add_New_User onclick=window.location.href='Add_User.html' size= 40> <br><br>
 
-                        <input type = button value = View_Branch_Information onclick=window.location.href='View_Branch_Information.html' size= 40>  <br><br>
+                        <input type = button value = View_Branch_Information onclick=window.location.href='View_Branch_Information.php' size= 40>  <br><br>
 
 						<input type = button value = Most_Frequent_Borrowers onclick=window.location.href='Most_Borrowers.html' size= 40> <br><br>
 						
