@@ -50,17 +50,20 @@ Publisher Name:<br>
 
 <h2>Return</h2>
 Show Documents being borrowed or reserved by user<br>
-<form action="">
+<form action="Return.php">
 Document ID:<br>
 <input type="text" name="DocID">
 <br>
 Copy:<br>
 <input type="Text" name="CopyNum">
 <br>
+LibID:<br>
+<input type="Text" name="LibID">
+<br>
 <input type="submit" value="Return">
 </form>
-
-<input type="button" onclick=window.location.href='MainPage.html' value="Return">
+<br><br>
+<input type="button" onclick=window.location.href='MainPage.html' value="Back">
 
 </body>
 </html>
