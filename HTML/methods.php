@@ -321,7 +321,7 @@ $docID, $docTitle, $docPDate,
 //Branch (branch)
 $branchLibID, $branchLName, $branchLLocation,
 //Copy (copy)
-$copyCopyNO, $branchLibID, $copyPosition,
+$copyCopyNO, $copyPosition,
 //Proceeding (proc)
 $procCDate, $procLocation, $procCEditor
 )
