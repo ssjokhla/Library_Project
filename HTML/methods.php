@@ -307,8 +307,6 @@ function addProceeding
 $pubPubID, $pubName, $pubAddress,
 //Document (doc)
 $docID, $docTitle, $docPDate,
-//Branch (branch)
-$branchLibID, $branchLName, $branchLLocation,
 //Copy (copy)
 $copyCopyNO, $copyPosition,
 //Proceeding (proc)
@@ -320,8 +318,7 @@ $procCDate, $procLocation, $procCEditor
 	
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
-	$queryBranch = "INSERT INTO Branch VALUES ('$branchLibID', '$branchLName', '$branchLLocation')";
-	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '$copyLibID', '$copyPosition')";
+	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '1111', '$copyPosition')";
 	$queryProceeding = "INSERT INTO Proceeding VALUES ('$$docID', '$procCDate', '$procLocation', '$procCEditor')";
 
 	mysqli_query($con, $queryPublisher);
@@ -333,8 +330,6 @@ $procCDate, $procLocation, $procCEditor
 
 function addJournalVolume
 (
-//Branch (branch)
-$branchLibID, $branchLName, $branchLLocation,
 //Publisher (pub)
 $pubPubID, $pubName, $pubAddress,
 //Document (doc)
@@ -359,17 +354,15 @@ $copyCopyNO, $copyPosition
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$queryBranch = "INSERT INTO Branch VALUES ('$branchLibID', '$branchLName', '$branchLLocation')";
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
 	$queryJournal_Volume = "INSERT INTO Journal_Volume VALUES ('$docID', '$jVolume', '$editorID')";
 	$queryJournal_Issue = "INSERT INTO Journal_Issue VALUES ('$docID', '$issueNo', $scope')";
 	$queryChief_Editor = "INSERT INTO Chief_Editor VALUES ('$editorID', '$eName')";
 	$queryInv_Editor = "INSERT INTO Inv_Editor VALUES ('$docID', '$issueNo', '$iEName')";
-	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '$branchLibID', '$copyPosition')";
+	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '1111', '$copyPosition')";
 	
 	
-	mysqli_query($con, $queryBranch);
 	mysqli_query($con, $queryPublisher);
 	mysqli_query($con, $queryDocument);
 	mysqli_query($con, $queryJournal_Volume);
