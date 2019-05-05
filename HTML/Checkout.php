@@ -7,7 +7,7 @@ echo "BorNo   : ".$BorNO;
 $DocID=$_POST['DocID'];
 echo "DocID   : ".$DocID;
 $ReaderID=$_SESSION['CardNumber'];
-echo "ReaderID: ".$ReaderID
+echo "ReaderID: ".$ReaderID;
 $CopyNO=$_POST['CopyNO'];
 echo "CopyNO  : ".$CopyNO;
 $LibID=$_POST['LibID'];
