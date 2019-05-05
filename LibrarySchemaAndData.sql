@@ -598,8 +598,6 @@ VALUES ("9978", "1", "1111", "NW");
 INSERT INTO Proceedings
 VALUES ("9978", "2019-03-19 03:25:32", "NW", "Jerome");
 
-INSERT INTO Branch VALUES("601", "Van Houten", "Newark");
-
 INSERT INTO Publisher VALUES("4001", "Journal of ACM" , "New York");
 INSERT INTO Publisher VALUES("4002", "Springer" , "New York");
 INSERT INTO Publisher VALUES("4003", "IEEE" , "New York");
@@ -669,18 +667,18 @@ INSERT INTO Inv_Editor VALUES("2010","10","Hamid R. Berenji");
 INSERT INTO Inv_Editor VALUES("2011","11","Asim Roy");
 INSERT INTO Inv_Editor VALUES("2012","12","Elisa Bertino");
 
-INSERT INTO Copy VALUES("2001", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2002", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2003", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2004", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2005", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2006", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2007", "1", "111" , "NE");
-INSERT INTO Copy VALUES("2008", "1", "112" , "NE");
-INSERT INTO Copy VALUES("2009", "1", "112" , "NE");
-INSERT INTO Copy VALUES("2010", "1", "112" , "NE");
-INSERT INTO Copy VALUES("2011", "1", "112" , "NE");
-INSERT INTO Copy VALUES("2012", "1", "112" , "NE");
+INSERT INTO Copy VALUES("2001", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2002", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2003", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2004", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2005", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2006", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2007", "1", "1111" , "NE");
+INSERT INTO Copy VALUES("2008", "1", "1112" , "NE");
+INSERT INTO Copy VALUES("2009", "1", "1112" , "NE");
+INSERT INTO Copy VALUES("2010", "1", "1112" , "NE");
+INSERT INTO Copy VALUES("2011", "1", "1112" , "NE");
+INSERT INTO Copy VALUES("2012", "1", "1112" , "NE");
 
 INSERT INTO Reader VALUES('111111', 'Student', 'Sam Mish', '456 Road', '0');
 INSERT INTO Reader VALUES('111112', 'Student', 'Val', '123 Lane', '0');
