@@ -259,22 +259,20 @@ function printPublisher($pubID)
 }
 
 //Administrative Funtions Menu
-function addBook
-(
-//Publisher (pub)
-$pubPubID, $pubName, $pubAddress,
-//Document (doc)
-$docID, $docTitle, $docPDate,
-//Branch (branch)
-$branchLibID, $branchLName, $branchLLocation,
-//Copy (copy)
-$copyCopyNO, $copyPosition,
-//Author (author)
-$authorAuthorID, $authorName,
-//Book (book)
-$bookISBN
-)
+function addBook($pubPubID, $pubName, $pubAddress,$docID, $docTitle, $docPDate, $copyCopyNO, $copyPosition,$authorAuthorID, $authorName,$bookISBN)
 {
+	echo "Method Hit.<br>";
+	echo "<br> pubID: ".$pubPubID;
+	echo "<br> pubName: ".$pubName;
+	echo "<br> pubAddress: ".$pubAddress;
+	echo "<br> documentID: ".$docID;
+	echo "<br> documentTitle: ".$docTitle;
+	echo "<br> docPDate: ".$docPDate;
+	echo "<br> copyNO: ".$copyCopyNO;
+	echo "<br> copyPos: ".$copyPosition;
+	echo "<br> authorID: ".$authorAuthorID;
+	echo "<br> authorName: ".$authorName;
+	echo "<br> bookISBN: ".$bookISBN;
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
 
@@ -284,13 +282,14 @@ $bookISBN
 	}
 
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
-	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$docPubID')";
-	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '$branchLibID', '$copyPosition')";
+	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
+	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '1111', '$copyPosition')";
 	$queryAuthor = "INSERT INTO Author VALUES ('$authorAuthorID', '$authorName')";
 	$queryBook = "INSERT INTO Book VALUES ('$docID', '$bookISBN')";
 	$queryWrites = "INSERT INTO Writes VALUES ('$authorAuthorID', '$docID')";
 	
 	
+	echo "<BR> Variables Set";
 	
 	mysqli_query($con, $queryPublisher);
 	mysqli_query($con, $queryDocument);
@@ -298,7 +297,8 @@ $bookISBN
 	mysqli_query($con, $queryAuthor);
 	mysqli_query($con, $queryBook);
 	mysqli_query($con, $queryWrites);
-	
+
+	echo "<BR> All Queries Ran";
 }
 
 function addProceeding
