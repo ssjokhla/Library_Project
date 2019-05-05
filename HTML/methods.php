@@ -425,8 +425,23 @@ function printBranchInfo($libID)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}	
-	$query1 = "SELECT LName,LLocation FROM Branch";
-	mysqli_query($con, $query1);
+	$query = "SELECT LName,LLocation FROM Branch";
+	$SearchResult = mysqli_query($con, $query);
+	$rowCount = mysqli_num_rows($SearchResult);
+	#var_dump(getType(urlICS($rows['Name'], $rows['Location'], $rows['Description'], $rows['Google_Time_Start'], $rows['Google_Time_End'])));
+	if (mysqli_num_rows($result) != 0)
+	{
+		echo "result /=0<br>";
+		echo "<table>";
+		echo"<tr><th>Branch Name</th><th>Branch Location</th></tr>";
+		while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
+		{
+		
+			echo "<tr><td>".$rows['LName'];
+			echo "</td><td>".$rows['LLocation']."</td></tr>";
+		}
+	echo "</table>";
+	}
 }
 
 function frequentBorrowers()
