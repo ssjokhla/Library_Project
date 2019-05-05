@@ -106,6 +106,7 @@ function docReturn($Bornumber)
 	mysqli_select_db($con, $mysqlDB);
 	
 	$query = "UPDATE Borrows SET RDTime = NOW() WHERE BorNO = '$Bornumber'";
+	mysqli_query($con,$query);
 }
 
 function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
