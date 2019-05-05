@@ -62,7 +62,7 @@ if (mysqli_num_rows($result) != 0)
 	while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
 		echo"<tr><th scope='row'>";
-		echo'<strong><big><big>Borrow ID: '.$rows['BorNO'] .'</big></big></strong><br> Document ID: '. $rows['DocID']  .'<br><br><u> Copy Number:</u>: '.' <i>'. $rows['Copy Number'].'</i>';
+		echo'<strong><big><big>Borrow ID: '.$rows['BorNO'] .'</big></big></strong><br> Document ID: '. $rows['DocID']  .'<br><br><u> Copy Number:</u>: '.' <i>'. $rows['CopyNO'].'</i>';
 		echo "</th><td>";
 	}
 	echo "</tbody></table>";
