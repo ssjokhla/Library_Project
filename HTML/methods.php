@@ -157,11 +157,11 @@ function printDocs($readerID)
 	mysqli_select_db($con, $mysqlDB);
 	
 	echo "These are the documents that are reserved";
-	$query1 = "Select Title FROM Reader,Reserves,Document WHERE ReaderID = '$readerID'";
+	$query1 = "Select Title FROM Reader NATURAL JOIN Reserves NATURAL JOIN Document WHERE Reader.ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query1);
 	
 	echo "These are the documents that are borrowed";
-	$query2 = "Select Title FROM Reader,Borrows,Document WHERE ReaderID = '$readerID'";
+	$query2 = "Select Title FROM Reader NATURAL JOIN Borrows NATURAL JOIN Document WHERE Reader.ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query2);
 }
 
