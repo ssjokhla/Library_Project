@@ -15,8 +15,11 @@ $mysqlDB = "Library";
 function checkReader($input)
 {
 	//Connect to mysql
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query = "SELECT * from Reader";
 	$result = mysqli_query($con, $s);
@@ -27,8 +30,11 @@ function checkReader($input)
 
 function checkAdmin($id, $pw)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query = "SELECT * FROM Admins WHERE username = '$id' and password = '$pw'";
 	$result = mysqli_query($con, $query);
@@ -50,8 +56,11 @@ function checkAdmin($id, $pw)
 //Reader Functions
 function searchID($input)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query = "SELECT * FROM Document WHERE DocID = '$input'";
 	$result = mysqli_query($con, $s);
@@ -63,8 +72,11 @@ function searchID($input)
 
 function searchTitle($input)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query = "SELECT * FROM Document WHERE Title = '$input'";
 	$result = mysqli_query($con, $s);
@@ -74,8 +86,11 @@ function searchTitle($input)
 
 function searchPubName($input)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query = "SELECT * FROM Document,Publisher WHERE Pubname = '$input'";
 	$result = mysqli_query($con, $s);
@@ -115,8 +130,11 @@ function docReturn($Bornumber)
 
 function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "SELECT * from numReserved WHERE ReaderID = '$readerID'";
 	$result1 = mysqli_query($con, $query2);
@@ -134,8 +152,11 @@ function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
 function computeFine($Bornumber)
 {
 	$fine = 0;
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$queryd1 = "SELECT BDTime FROM Borrows WHERE BorNO = '$Bornumber'";
 	$queryd2 = "SELECT NOW()";
@@ -169,8 +190,11 @@ function computeFine($Bornumber)
 
 function printDocs($readerID)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	echo "These are the documents that are reserved";
 	$query1 = "Select Title FROM Reader NATURAL JOIN Reserves NATURAL JOIN Document WHERE Reader.ReaderID = '$readerID'";
@@ -183,8 +207,11 @@ function printDocs($readerID)
 
 function printPublisher($pubID)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	
 	$query1 = "Select DocID, Title FROM Document,Publisher WHERE PublisherID = '$pubID'";
@@ -208,8 +235,11 @@ $authorAuthorID,
 $bookISBN
 )
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$docPubID')";
@@ -243,8 +273,11 @@ $copyCopyNO, $copyLibID, $copyPosition,
 $procCDate, $procLocation, $procCEditor
 )
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
@@ -279,8 +312,11 @@ $copyCopyNO, $copyPosition
 
 )
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$queryBranch = "INSERT INTO Branch VALUES ('$branchLibID', '$branchLName', '$branchLLocation')";
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
@@ -305,8 +341,11 @@ $copyCopyNO, $copyPosition
 
 function searchDoc($docID, $copyNo, $libID)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and CopyNO = '$copyNo' and LibID = '$LibID' and RDTime = Null";
 	$result = mysqli_query($con, $query1);
@@ -324,8 +363,11 @@ function searchDoc($docID, $copyNo, $libID)
 
 function addReader($readerID, $rType, $rName, $rAddress)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "INSERT INTO Reader VALUES('$readerID', '$rtype', '$rName', '$rAddress')";
 	mysqli_query($con, $query1);
@@ -333,8 +375,11 @@ function addReader($readerID, $rType, $rName, $rAddress)
 
 function printBranchInfo($libID)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "SELECT LName,LLocation FROM Branch";
 	mysqli_query($con, $query1);
@@ -342,8 +387,11 @@ function printBranchInfo($libID)
 
 function frequentBorrowers()
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "SELECT * FROM Borrows ORDERY BY ReaderID DESC limit 10";
 	mysqli_query($con, $query1);
@@ -351,8 +399,11 @@ function frequentBorrowers()
 
 function frequentBorrowedBooks()
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "SELECT * FROM Borrows, Copy, Document ORDERY BY Title DESC limit 10";
 	mysqli_query($con, $query1);
@@ -363,8 +414,11 @@ function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
 {
 	$diffTime = 0;
 	$fine = 0;
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
 	
 	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
 	$BDTime = mysqli_query($con, $query1);
