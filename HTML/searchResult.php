@@ -4,9 +4,7 @@
 <h2>Checking Out</h2>
 <form action="Checkout.php" method="post">
 Borrow Number:
-<input type="text" name="BorNO"><br?
-Reader ID:
-<input type="text" name="ReaderID"><br>
+<input type="text" name="BorNO"><br>
 Document ID:
 <input type="text" name="DocID"><br>
 Copy Number:
@@ -23,6 +21,7 @@ include('methods.php');
 session_start();
 
 $ReaderID=$_SESSION['CardNumber'];
+echo "Reader ID is: "$ReaderID;
 $DocID=$_POST['DocID'];
 $Title=$_POST['Title'];
 $PubName=$_POST['Pubname'];
