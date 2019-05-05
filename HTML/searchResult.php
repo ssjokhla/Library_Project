@@ -15,6 +15,21 @@ Library ID:
 <input type="submit" value="Checkout">
 </form>
 
+<br><br>
+<h2>Reserve</h2>
+<form action="Reserve.php" method="post">
+Reserve Number:
+<input type="text" name="ResNO"><br>
+Document ID:
+<input type="text" name="DocID"><br>
+Copy Number:
+<input type="text" name="CopyNO"><br>
+Library ID:
+<input type="text" name="LibID">
+<br>
+<input type="submit" value="Checkout">
+</form>
+
 <h1>Results Page</h1>
 <?php
 include('methods.php');
