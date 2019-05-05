@@ -416,7 +416,7 @@ function addReader($readerID, $rType, $rName, $rAddress)
 	mysqli_query($con, $query1);
 }
 
-function printBranchInfo($libID)
+function printBranchInfo()
 {
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
