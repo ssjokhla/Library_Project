@@ -21,7 +21,7 @@ include('methods.php');
 session_start();
 
 $ReaderID=$_SESSION['CardNumber'];
-echo "Reader ID is: "$ReaderID;
+echo "Reader ID is: ".$ReaderID;
 $DocID=$_POST['DocID'];
 $Title=$_POST['Title'];
 $PubName=$_POST['Pubname'];
