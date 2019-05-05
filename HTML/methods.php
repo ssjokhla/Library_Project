@@ -99,12 +99,12 @@ function docCheckout($BorNO, $readerID, $docID, $copyNO, $libID)
 	echo "Query sent";
 }
 
-function docReturn()
+function docReturn($Bornumber)
 {
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "INSERT into Borrows (ReaderID, DocID, CopyNO, LibID, RDTime) VALUES ('$readerID', '$docID', '$copyNO', '$libID', NOW())";
+	$query = "UPDATE Borrows SET RDTime = NOW() WHERE BorNO = '$Bornumber'";
 }
 
 function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
