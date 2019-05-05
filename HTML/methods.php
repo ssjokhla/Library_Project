@@ -453,7 +453,33 @@ function frequentBorrowers()
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query = "SELECT DocID FROM Borrows ORDERY BY ReaderID DESC limit 10";
+	$query = "SELECT * FROM Borrows ORDERY BY ReaderID DESC limit 10";
+	$SearchResult = mysqli_query($con, $query);
+	$rowCount = mysqli_num_rows($SearchResult);
+	if (mysqli_num_rows($result) != 0)
+	{
+		echo "result /=0<br>";
+		echo "<table>";
+		echo"<tr><th>Branch Name</th><th>Branch Location</th></tr>";
+		while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
+		{
+		
+			echo "<tr><td>".$rows['ReaderID']."</td></tr>";
+		}
+	echo "</table>";
+	}
+}
+
+function frequentBorrowedBooks()
+{
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+
+	if (!$con)
+	{
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	$query = "SELECT * FROM Borrows, Copy, Document ORDERY BY Title DESC limit 10";
 	$SearchResult = mysqli_query($con, $query);
 	$rowCount = mysqli_num_rows($SearchResult);
 	if (mysqli_num_rows($result) != 0)
@@ -467,19 +493,7 @@ function frequentBorrowers()
 			echo "<tr><td>".$rows['DocID']."</td></tr>";
 		}
 	echo "</table>";
-}
-
-function frequentBorrowedBooks()
-{
-	$con = mysqli_connect("localhost", "admin", "password", "Library");
-	mysqli_select_db($con, "Library");
-
-	if (!$con)
-	{
-		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query1 = "SELECT * FROM Borrows, Copy, Document ORDERY BY Title DESC limit 10";
-	mysqli_query($con, $query1);
 }
 
 
