@@ -144,6 +144,12 @@ VALUES ("1111", "Library1", "Newark" );
 INSERT INTO Copy
 VALUES ("1111", "1", "1111", "South");
 
+INSERT INTO Copy
+VALUES ("1111", "2", "1111", "South");
+
+INSERT INTO Copy
+VALUES ("1111", "3", "1111", "South");
+
 INSERT INTO Author
 VALUES ("1111", "Suzanne Collins");
 
@@ -162,6 +168,9 @@ VALUES ("1112", "The Great Gatsby", "1950-10-20", "1112");
 
 INSERT INTO Copy
 VALUES ("1112", "1", "1111", "South");
+
+INSERT INTO Copy
+VALUES ("1112", "2", "1111", "South");
 
 INSERT INTO Author
 VALUES ("1112", "F. Scott Fitzgerald");
@@ -201,11 +210,8 @@ VALUES ("1114", "Publisher 4", "987 Address Ln");
 INSERT INTO Document 
 VALUES ("1114", "Hamlet", "1700-10-20", "1114");
 
-INSERT INTO Branch
-VALUES ("1113", "Library3", "Bayonne" );
-
 INSERT INTO Copy
-VALUES ("1114", "1", "1113", "South");
+VALUES ("1114", "1", "1111", "South");
 
 INSERT INTO Author
 VALUES ("1114", "William Shakespear");
@@ -223,11 +229,9 @@ VALUES ("1115", "Publisher 5", "654 Address Ln");
 INSERT INTO Document 
 VALUES ("1115", "War and Peace", "1200-10-20", "1115");
 
-INSERT INTO Branch
-VALUES ("1115", "Library5", "Nutley" );
 
 INSERT INTO Copy
-VALUES ("1115", "1", "1115", "South");
+VALUES ("1115", "1", "1112", "South");
 
 INSERT INTO Author
 VALUES ("1115", "Leo Tolstoy");
@@ -245,11 +249,9 @@ VALUES ("1116", "Publisher 6", "321 Address Ln");
 INSERT INTO Document 
 VALUES ("1116", "The Odyssey", "1950-10-20", "1116");
 
-INSERT INTO Branch
-VALUES ("1116", "Library6", "Clifton" );
 
 INSERT INTO Copy
-VALUES ("1116", "1", "1116", "South");
+VALUES ("1116", "1", "1111", "South");
 
 INSERT INTO Author
 VALUES ("1116", "Homer");
@@ -265,7 +267,7 @@ INSERT INTO Document
 VALUES ("1117", "The Iliad", "1950-10-20", "1116");
 
 INSERT INTO Copy
-VALUES ("1117", "1", "1116", "South");
+VALUES ("1117", "1", "1112", "South");
 
 INSERT INTO Book
 VALUES ('1117', '998887');
@@ -281,11 +283,8 @@ VALUES ("1118", "Publisher 8", "159 Address Ln");
 INSERT INTO Document 
 VALUES ("1118", "Alice's Adventures in Wonderland", "1862-10-20", "1118");
 
-INSERT INTO Branch
-VALUES ("1117", "Library7", "Teaneck" );
-
 INSERT INTO Copy
-VALUES ("1118", "1", "1117", "South");
+VALUES ("1118", "1", "1111", "South");
 
 INSERT INTO Author
 VALUES ("1118", "Lewis Carroll");
@@ -304,11 +303,8 @@ VALUES ("1119", "Publisher 9", "685 Address Ln");
 INSERT INTO Document 
 VALUES ("1119", "Pride and Prejudice", "1765-10-20", "1119");
 
-INSERT INTO Branch
-VALUES ("1119", "Library9", "Lodi" );
-
 INSERT INTO Copy
-VALUES ("1119", "1", "1119", "South");
+VALUES ("1119", "1", "1112", "South");
 
 INSERT INTO Author
 VALUES ("1119", "Jane Auston");
@@ -328,7 +324,7 @@ INSERT INTO Document
 VALUES ("1110", "The Catcher in the Rye", "1945-10-20", "1110");
 
 INSERT INTO Copy
-VALUES ("1110", "1", "1119", "South");
+VALUES ("1110", "1", "1112", "South");
 
 INSERT INTO Author
 VALUES ("1110", "J.D. Salinger");
@@ -347,11 +343,11 @@ VALUES ("1121", "Publisher 10", "741 Address Ln");
 INSERT INTO Document 
 VALUES ("1121", "1984", "1954-10-20", "1121");
 
-INSERT INTO Branch
-VALUES ("1121", "Library11", "Branch Brook" );
+INSERT INTO Copy
+VALUES ("1121", "1", "1112", "South");
 
 INSERT INTO Copy
-VALUES ("1121", "1", "1121", "South");
+VALUES ("1121", "2", "1112", "South");
 
 INSERT INTO Author
 VALUES ("1121", "George Orwell");
@@ -371,7 +367,7 @@ INSERT INTO Document
 VALUES ("1122", "Catch-22", "1961-10-20", "1122");
 
 INSERT INTO Copy
-VALUES ("1122", "1", "1121", "South");
+VALUES ("1122", "1", "1112", "South");
 
 INSERT INTO Author
 VALUES ("1122", "Joseph Heller");
@@ -394,7 +390,7 @@ INSERT INTO Branch
 VALUES ("1123", "Library12", "Morrisetown" );
 
 INSERT INTO Copy
-VALUES ("1123", "1", "1123", "South");
+VALUES ("1123", "1", "1112", "South");
 
 INSERT INTO Author
 VALUES ("1123", "John Steinbeck");
@@ -412,7 +408,7 @@ Insert into Document
 VALUES ("1234", "Proceeding 1234", "2009-05-21", "1234");
 
 INSERT INTO Copy
-VALUES ("1234", "1", "1111", "NE");
+VALUES ("1234", "1", "1112", "NE");
 
 INSERT INTO Proceedings
 VALUES ("1234", "2019-04-27 03:25:32", "NE", "Hodor");
@@ -460,7 +456,7 @@ Insert into Document
 VALUES ("1928", "Proceeding 1928", "2011-08-22", "1928");
 
 INSERT INTO Copy
-VALUES ("1928", "1", "1111", "SW");
+VALUES ("1928", "1", "1112", "SW");
 
 INSERT INTO Proceedings
 VALUES ("1928", "2019-03-19 03:25:32", "SW", "Jerome");
@@ -475,7 +471,7 @@ Insert into Document
 VALUES ("1293", "Proceeding 1293", "2017-12-15", "1293");
 
 INSERT INTO Copy
-VALUES ("1293", "1", "1111", "SW");
+VALUES ("1293", "1", "1112", "SW");
 
 INSERT INTO Proceedings
 VALUES ("1293", "2019-03-19 03:25:32", "SW", "Jerome");
@@ -522,7 +518,7 @@ VALUES ("2198", "Proceeding 2198", "2011-11-11", "2198");
 
 
 INSERT INTO Copy
-VALUES ("2198", "1", "1111", "SW");
+VALUES ("2198", "1", "1112", "SW");
 
 INSERT INTO Proceedings
 VALUES ("2198", "2019-03-19 03:25:32", "SW", "Jerome");
@@ -537,7 +533,7 @@ VALUES ("6876", "Proceeding 6876", "2015-09-21", "6876");
 
 
 INSERT INTO Copy
-VALUES ("6876", "1", "1111", "NE");
+VALUES ("6876", "1", "1112", "NE");
 
 INSERT INTO Proceedings
 VALUES ("6876", "2019-03-19 03:25:32", "NE", "Jerome");
@@ -582,7 +578,7 @@ VALUES ("2351", "Proceeding 2351", "2015-08-08", "2351");
 
 
 INSERT INTO Copy
-VALUES ("2351", "1", "1111", "NE");
+VALUES ("2351", "1", "1112", "NE");
 
 INSERT INTO Proceedings
 VALUES ("2351", "2019-03-19 03:25:32", "NE", "Jerome");
@@ -673,18 +669,18 @@ INSERT INTO Inv_Editor VALUES("2010","10","Hamid R. Berenji");
 INSERT INTO Inv_Editor VALUES("2011","11","Asim Roy");
 INSERT INTO Inv_Editor VALUES("2012","12","Elisa Bertino");
 
-INSERT INTO Copy VALUES("2001", "501", "601" , "NE");
-INSERT INTO Copy VALUES("2002", "502", "601" , "NE");
-INSERT INTO Copy VALUES("2003", "503", "601" , "NE");
-INSERT INTO Copy VALUES("2004", "504", "601" , "NE");
-INSERT INTO Copy VALUES("2005", "505", "601" , "NE");
-INSERT INTO Copy VALUES("2006", "506", "601" , "NE");
-INSERT INTO Copy VALUES("2007", "507", "601" , "NE");
-INSERT INTO Copy VALUES("2008", "508", "601" , "NE");
-INSERT INTO Copy VALUES("2009", "509", "601" , "NE");
-INSERT INTO Copy VALUES("2010", "510", "601" , "NE");
-INSERT INTO Copy VALUES("2011", "511", "601" , "NE");
-INSERT INTO Copy VALUES("2012", "512", "601" , "NE");
+INSERT INTO Copy VALUES("2001", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2002", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2003", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2004", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2005", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2006", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2007", "1", "111" , "NE");
+INSERT INTO Copy VALUES("2008", "1", "112" , "NE");
+INSERT INTO Copy VALUES("2009", "1", "112" , "NE");
+INSERT INTO Copy VALUES("2010", "1", "112" , "NE");
+INSERT INTO Copy VALUES("2011", "1", "112" , "NE");
+INSERT INTO Copy VALUES("2012", "1", "112" , "NE");
 
 INSERT INTO Reader VALUES('111111', 'Student', 'Sam Mish', '456 Road', '0');
 INSERT INTO Reader VALUES('111112', 'Student', 'Val', '123 Lane', '0');
@@ -698,4 +694,7 @@ INSERT INTO Reader VALUES('111119', 'Student', 'Kate La', '874 Lane', '0');
 INSERT INTO Reader VALUES('111120', 'Student', 'Jill La', '874 Lane', '0');
 INSERT INTO Reader VALUES('111121', 'Staff', 'Sean Po', '198 Drive', '0');
 INSERT INTO Reader VALUES('111122', 'Senior', 'Jen Po', '198 Drive', '0');
+
+
+
 INSERT INTO Admins VALUES('Admin', 'Password');
