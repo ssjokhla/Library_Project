@@ -101,10 +101,14 @@ function docCheckout($BorNO, $readerID, $docID, $copyNO, $libID)
 
 function docReturn($Bornumber)
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
 	
-	$query = "UPDATE Borrows SET RDTime = NOW() WHERE BorNO = $Bornumber";
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+	mysqli_select_db($con, "Library");
+	if (!$con){
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	
+	$query = "UPDATE Borrows SET RDTime = NOW() WHERE BorNO = '$Bornumber'";
 	mysqli_query($con,$query);
 	echo "Query Sent";
 }
