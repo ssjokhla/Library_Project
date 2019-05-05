@@ -29,7 +29,7 @@ CREATE TABLE Reader (
 	ReaderID INT NOT NULL,
 	RType VARCHAR(10) NOT NULL,
 	RName VARCHAR(10) NOT NULL,
-	Address VARCHAR(10) NOT NULL,
+	Address VARCHAR(50) NOT NULL,
     numReserved INT,
 	PRIMARY KEY(ReaderID)     
 	);	
@@ -686,5 +686,16 @@ INSERT INTO Copy VALUES("2010", "510", "601" , "NE");
 INSERT INTO Copy VALUES("2011", "511", "601" , "NE");
 INSERT INTO Copy VALUES("2012", "512", "601" , "NE");
 
-INSERT INTO Reader VALUES('111111', 'Student', 'Sam Mish', '456 Road', NULL);
+INSERT INTO Reader VALUES('111111', 'Student', 'Sam Mish', '456 Road', '0');
+INSERT INTO Reader VALUES('111112', 'Student', 'Val', '123 Lane', '0');
+INSERT INTO Reader VALUES('111113', 'Student', 'Chris A', '456 Lane', '0');
+INSERT INTO Reader VALUES('111114', 'Student', 'Ujj Sur', '123 Road', '0');
+INSERT INTO Reader VALUES('111115', 'Staff', 'Sta FF', '123 Drive', '0');
+INSERT INTO Reader VALUES('111116', 'Staff', 'Ben Brown', '456 Ave', '0');
+INSERT INTO Reader VALUES('111117', 'Senior', 'Sen Ior', '456 Drive', '0');
+INSERT INTO Reader VALUES('111118', 'Senior', 'Man Brown', '789 Road', '0');
+INSERT INTO Reader VALUES('111119', 'Student', 'Kate La', '874 Lane', '0');
+INSERT INTO Reader VALUES('111120', 'Student', 'Jill La', '874 Lane', '0');
+INSERT INTO Reader VALUES('111121', 'Staff', 'Sean Po', '198 Drive', '0');
+INSERT INTO Reader VALUES('111122', 'Senior', 'Jen Po', '198 Drive', '0');
 INSERT INTO Admins VALUES('Admin', 'Password');
