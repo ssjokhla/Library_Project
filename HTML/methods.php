@@ -90,8 +90,10 @@ function docCheckout($readerID, $docID, $copyNO, $libID)
 	echo "Connected";
 	mysqli_select_db($con, $mysqlDB);
 	echo "DB Selected";
-	$query = "INSERT into Borrows (ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('$readerID', '$docID', '$copyNO', '$libID', NOW())";	
+	$query = "INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1111', '111111', '1111', '1', '1111', NOW())";
+	//$query = "INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('$BorNO', '$readerID', '$docID', '$copyNO', '$libID', NOW())";	
 	mysqli_query($con, $query);
+	echo $result;
 	echo "Query sent";
 }
 

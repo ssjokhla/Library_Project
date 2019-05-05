@@ -1,7 +1,7 @@
 <?php
 include("methods.php");
 session_start();
-echo "HI"
+echo "HI";
 $BorNO=$_POST['BorNO'];
 $DocID=$_POST['DocID'];
 $ReaderID=$_POST['ReaderID'];
