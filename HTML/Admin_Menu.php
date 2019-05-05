@@ -44,7 +44,7 @@ if($rowCount > 0)
 						
 						<input type = button value = Calculate_Average_Fine onclick = window.location.href='Avg_Price.html' size = 40> <br><br>
 						
-						<input type = button value = Quit onclick = window.location.href='Admin_Menu.html' size = 40> <br><br>
+						<input type = button value = Quit onclick = window.location.href='MainPage.html' size = 40> <br><br>
 						
 			
     </body>

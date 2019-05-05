@@ -318,21 +318,20 @@ function addProceeding
 $pubPubID, $pubName, $pubAddress,
 //Document (doc)
 $docID, $docTitle, $docPDate,
+//Branch (branch)
+$branchLibID, $branchLName, $branchLLocation,
 //Copy (copy)
-$copyCopyNO, $copyLibID, $copyPosition,
+$copyCopyNO, $branchLibID, $copyPosition,
 //Proceeding (proc)
 $procCDate, $procLocation, $procCEditor
 )
 {
-	$con = mysqli_connect("localhost", "admin", "password", "Library");
-	mysqli_select_db($con, "Library");
-
-	if (!$con)
-	{
-		die("Connection failed: " . mysqli_connect_error());
-	}
+	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
+	mysqli_select_db($con, $mysqlDB);
+	
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
+	$queryBranch = "INSERT INTO Branch VALUES ('$branchLibID', '$branchLName', '$branchLLocation')";
 	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '$copyLibID', '$copyPosition')";
 	$queryProceeding = "INSERT INTO Proceeding VALUES ('$$docID', '$procCDate', '$procLocation', '$procCEditor')";
 
