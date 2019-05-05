@@ -58,14 +58,16 @@ if (mysqli_num_rows($result) != 0)
 {
 	echo "<table>";
 	echo "<table class='table'>";
-	echo "<tbody>";
+	//echo "<tbody>";
+	echo"<tr><th>Borrow ID</th><th>Document ID</th><th>Copy Number</th></tr>";
 	while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
-		echo"<tr><th scope='row'>";
-		echo'<strong><big><big>Borrow ID: '.$rows['BorNO'] .'</big></big></strong><br> Document ID: '. $rows['DocID']  .'<br><br><u> Copy Number:</u>: '.' <i>'. $rows['CopyNO'].'</i>';
-		echo "</th><td>";
+		
+		echo "<tr><td>".$rows['BorNO'];
+		echo "</td><td>".$rows['DocID'];
+		echo "</td><td>".$rows['CopyNO']."</td></tr>";
 	}
-	echo "</tbody></table>";
+	echo "</table>";
 }
 
 
