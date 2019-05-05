@@ -56,6 +56,7 @@ $rowCount = mysqli_num_rows($SearchResult);
 #var_dump(getType(urlICS($rows['Name'], $rows['Location'], $rows['Description'], $rows['Google_Time_Start'], $rows['Google_Time_End'])));
 if (mysqli_num_rows($result) != 0)
 {
+	echo "result /=0<br>";
 	echo "<table>";
 	echo"<tr><th>Borrow ID</th><th>Document ID</th><th>Copy Number</th></tr>";
 	while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
