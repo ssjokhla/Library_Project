@@ -101,6 +101,7 @@ function docCheckout($BorNO, $readerID, $docID, $copyNO, $libID)
 
 function docReturn($Bornumber)
 {
+	echo "Hai this is: " . $Bornumber;
 	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
 	mysqli_select_db($con, $mysqlDB);
 	
