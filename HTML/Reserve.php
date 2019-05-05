@@ -13,6 +13,6 @@ echo "CopyNO  : ".$CopyNO;
 $LibID=$_POST['LibID'];
 echo "LibID   : ".$LibID;
 
-docReturn($ResNO, $ReaderID, $DocID, $CopyNO, $LibID);
+docReserve($ResNO, $ReaderID, $DocID, $CopyNO, $LibID);
 
 ?>
