@@ -4,7 +4,7 @@
 <h2>Checking Out</h2>
 <form action="Checkout.php" method="post">
 Borrow Number:
-<input type="text" name="BorNO">
+<input type="text" name="BorNO"><br?
 Reader ID:
 <input type="text" name="ReaderID"><br>
 Document ID:
