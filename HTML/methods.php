@@ -159,6 +159,8 @@ function docReserve($ResNO, $readerID, $docID, $copyNO, $libID)
 
 function computeFine($Bornumber)
 {
+	echo "<br>Method hit";
+	echo "<br>Bornumber is: ".$Bornumber;
 	$fine = 0;
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
@@ -172,7 +174,10 @@ function computeFine($Bornumber)
 	
 	$date1 = mysqli_query($con, $queryd1);
 	$date2 = mysqli_query($con, $queryd2);
-	
+	echo "Date1 Object".get_object_vars($date1);
+
+	$strd1 = strtotime($date1);
+	echo "<br>String is:".$strd1;
 	if($date2 == 0)
 	{
 		$fine = 0;
@@ -195,6 +200,7 @@ function computeFine($Bornumber)
 			$fine = $days*.20;
 		}
 	}
+	echo "<br>Fine is: $" . $fine;
 }
 
 function printDocs($readerID)
@@ -224,9 +230,23 @@ function printPublisher($pubID)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
+	$query1 = "Select DocID, Title FROM Document,Publisher WHERE Publisher.PublisherID = '$pubID'";
+	$result = mysqli_query($con, $query1);
+	if (mysqli_num_rows($result) != 0)
+	{
+        	echo "<table>";
+        	echo "<table class='table'>";
+        	//echo "<tbody>";
+        	echo"<tr><th>Borrow ID</th><th>Title</th></tr>";
+        	while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
+        	{
 	
-	$query1 = "Select DocID, Title FROM Document,Publisher WHERE PublisherID = '$pubID'";
-	$BDTime = mysqli_query($con, $query1);
+                	echo "</td><td>".$rows['DocID'];
+               		echo "</td><td>".$rows['Title']."</td></tr>";
+        	}
+        echo "</table>";
+	}
+	
 }
 
 //Administrative Funtions Menu
