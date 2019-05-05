@@ -357,7 +357,7 @@ $copyCopyNO, $copyPosition
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
 	$queryJournal_Volume = "INSERT INTO Journal_Volume VALUES ('$docID', '$jVolume', '$editorID')";
-	$queryJournal_Issue = "INSERT INTO Journal_Issue VALUES ('$docID', '$issueNo', $scope')";
+	$queryJournal_Issue = "INSERT INTO Journal_Issue VALUES ('$docID', '$issueNo', '$scope')";
 	$queryChief_Editor = "INSERT INTO Chief_Editor VALUES ('$editorID', '$eName')";
 	$queryInv_Editor = "INSERT INTO Inv_Editor VALUES ('$docID', '$issueNo', '$iEName')";
 	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '1111', '$copyPosition')";
