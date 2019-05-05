@@ -15,6 +15,7 @@ $pubPubID=$_POST['pid'];
 $pubName=$_POST['pname'];
 $pubAddress=$_POST['paddress'];
 $authorAuthorID=$_POST['authid'];
+$authorName=$_POST['authname']
 
 
 
@@ -24,12 +25,10 @@ addBook
 $pubPubID, $pubName, $pubAddress,
 //Document (doc)
 $docID, $docTitle, $docPDate,
-//Branch (branch)
-$branchLibID, $branchLName, $branchLLocation,
 //Copy (copy)
 $copyCopyNO, $copyPosition,
 //Author (author)
-$authorAuthorID,
+$authorAuthorID, $authorName
 //Book (book)
 $bookISBN
 )
