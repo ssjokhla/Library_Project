@@ -52,8 +52,23 @@ if (!$con){
 $query = "SELECT * FROM document NATURAL JOIN copy NATURAL JOIN publisher WHERE Title = '$Title' OR docID = '$DocID' or PubName = 'PubName';";
 
 $SearchResult = mysqli_query($con, $query);
-
-echo $SerachResult;
+$rowCount = mysqli_num_rows($SearchResult);
+#var_dump(getType(urlICS($rows['Name'], $rows['Location'], $rows['Description'], $rows['Google_Time_Start'], $rows['Google_Time_End'])));
+if (mysqli_num_rows($result) != 0)
+{
+	echo "<table>";
+	echo"<tr><th>Borrow ID</th><th>Document ID</th><th>Copy Number</th></tr>";
+	while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
+	{
+		
+		echo "<tr><td>".$rows['Title'];
+		echo "</td><td>".$rows['DocID'];
+		echo "</td><td>".$rows['CopyNo'];
+		echo "</td><td>".$rows['LibID'];
+		echo "</td><td>".$rows['PubName']."</td></tr>";
+	}
+	echo "</table>";
+}
 ?>
 
 </html>
