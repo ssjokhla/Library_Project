@@ -694,5 +694,10 @@ INSERT INTO Reader VALUES('111121', 'Staff', 'Sean Po', '198 Drive', '0');
 INSERT INTO Reader VALUES('111122', 'Senior', 'Jen Po', '198 Drive', '0');
 
 
+INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1111', '111111', '1111', '1', '1111', NOW());
+INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1112', '111111', '1110', '1', '1111', NOW());
+
+INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1113', '111113', '1115', '1', '1112', NOW());
+INSERT into Borrows (BorNO, ReaderID, DocID, CopyNO, LibID, BDTime) VALUES ('1114', '111113', '1119', '1', '1112', NOW());
 
 INSERT INTO Admins VALUES('Admin', 'Password');
