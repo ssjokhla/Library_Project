@@ -463,7 +463,16 @@ function frequentBorrowers($LibID)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query = "select * from Borrows left join Reserves on Borrows.ReaderID = Reserves.ReaderID WHERE Borrows.LibID = '$LibID' union select * from Borrows right join Reserves on Borrows.ReaderID = Reserves.ReaderID WHERE Reserves.LibID = '$LibID' limit 10";
+
+	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', R.rname
+From Borrows BRW
+JOIN Book BK ON BRW.DocID = BK.DocID
+JOIN Reader R ON R.ReaderID = BRW.ReaderID
+JOIN Branch B ON B.LibID = BRW.LibID
+WHERE BRW.LibID = '$LibID'
+GROUP BY BRW.LibID, BRW.ReaderID
+Order By cnt DESC
+LIMIT 10";
 
 	$SearchResult = mysqli_query($con, $query);
 	
@@ -471,17 +480,18 @@ function frequentBorrowers($LibID)
 	if (mysqli_num_rows($rowCount) != 0)
 	{
 		echo "<table>";
-		echo"<tr><th>Branch Name</th><th>Branch Location</th></tr>";
+		echo"<tr><th>Count</th><th>Library ID</th></tr><tr><th>Reader Name</th>>/tr>";
 		while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
 		{
-		
-			echo "<tr><td>".$rows['ReaderID']."</td></tr>";
+			echo "<tr><td>".$rows['cnt']."</td></tr>";
+			echo "<tr><td>".$rows['Library']."</td></tr>";
+			echo "<tr><td>".$rows['rname']."</td></tr>";
 		}
 	echo "</table>";
 	}		
 }
 
-function frequentBorrowedBooks()
+function frequentBorrowedBooks($LibID)
 {
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
@@ -490,8 +500,18 @@ function frequentBorrowedBooks()
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	//$query = "select * from Borrows left join Reserves on Borrows.ReaderID = Reserves.ReaderID union select * from Borrows right join Reserves on Borrows.ReaderID = Reserves.ReaderID where extract(year from BDtime) limit 10";
-	$query = "select * from Borrows , Reserves full join Reserves where extract(year from BDtime) group by Reserves.DocID and Borrows.DocID having max(Borrows.DocID) and max(Reserves.DocID) limit 10"; 
+
+
+	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title
+From Borrows BRW
+JOIN Book BK ON BRW.DocID = BK.DocID
+JOIN Document D ON D.DocID = BK.DocID
+JOIN Branch B ON B.LibID = BRW.LibID
+WHERE BRW.libid = '$LibID'
+GROUP BY BRW.LibID, BRW.DocID
+Order By cnt DESC
+LIMIT 10";
+
 	$SearchResult = mysqli_query($con, $query);
 	
 	$rowCount = mysqli_num_rows($SearchResult);
@@ -499,11 +519,13 @@ function frequentBorrowedBooks()
 	{
 		echo "result /=0<br>";
 		echo "<table>";
-		echo"<tr><th>Branch Name</th><th>Branch Location</th></tr>";
+		echo"<tr><th>Count</th><th>LibraryID</th></tr><tr><th>Title</th></tr>";
 		while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
 		{
-		
-			echo "<tr><td>".$rows['ReaderID']."</td></tr>";
+			echo "<tr><td>".$rows['cnt']."</td></tr>";
+			echo "<tr><td>".$rows['Library']."</td></tr>";
+			echo "<tr><td>".$rows['Title']."</td></tr>";
+
 		}
 	echo "</table>";
 	}		
@@ -537,4 +559,38 @@ function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
 	echo "</table>";
 	}		
 }
+
+function mostPopularYear($year)
+{
+$con = mysqli_connect("localhost", "admin", "password", "Library");
+        mysqli_select_db($con, "Library");
+
+        if (!$con)
+        {
+                die("Connection failed: " . mysqli_connect_error());
+        }
+
+
+        $query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title From Borrows BRW JOIN Book BK ON BRW.DocID = BK.DocID JOIN Document D ON D.DocID = BK.DocID JOIN Branch B ON B.LibID = BRW.LibID WHERE YEAR(BRW.BDTime) = '2019' GROUP BY BRW.DocID, YEAR(BRW.BDTime),Library.B.Lname Order By cnt DESC LIMIT 10";
+
+        $SearchResult = mysqli_query($con, $query);
+
+        $rowCount = mysqli_num_rows($SearchResult);
+        if (mysqli_num_rows($rowCount) != 0)
+        {
+                echo "result /=0<br>";
+                echo "<table>";
+                echo"<tr><th>Count</th><th>LibraryID</th></tr><tr><th>Title</th></tr>";
+                while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
+                {
+                        echo "<tr><td>".$rows['cnt']."</td></tr>";
+                        echo "<tr><td>".$rows['Library']."</td></tr>";
+                        echo "<tr><td>".$rows['Title']."</td></tr>";
+
+                }
+        echo "</table>";
+        }
+	
+}
+
 ?>
