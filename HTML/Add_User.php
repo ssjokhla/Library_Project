@@ -5,6 +5,7 @@ $RType=$_POST['rtype'];
 $RName=$_POST['rname'];
 $RAddress=$_POST['raddress'];
 
+echo "Before AddReader";
 addReader($ReaderID, $RType, $RName, $RAddress);
 echo "<br>ReaderID: ".$ReaderID;
 echo "<br>RType: ".$RType;

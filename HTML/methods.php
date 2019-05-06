@@ -462,7 +462,6 @@ function frequentBorrowers($LibID)
 	$rowCount = mysqli_num_rows($SearchResult);
 	if (mysqli_num_rows($rowCount) != 0)
 	{
-		echo "result /=0<br>";
 		echo "<table>";
 		echo"<tr><th>Branch Name</th><th>Branch Location</th></tr>";
 		while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
