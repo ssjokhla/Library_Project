@@ -44,9 +44,9 @@ if($rowCount > 0)
 
 						<input type = button value = Most_Frequent_Borrowers onclick=window.location.href='Most_Borrowers.html' size= 40> <br><br>
 						
-						<input type = button value = View_Most_Borrowed_Books onclick = window.location.href='Most_Borrowed_Books.html' size = 40> <br><br>
+						<input type = button value = View_Most_Borrowed_Books onclick = window.location.href='Most_Borrowed_Books.php' size = 40> <br><br>
 						
-						<input type = button value = View_Most_Popular_Books onclick = window.location.href='Most_Popular_Books.html' size = 40> <br><br>
+						<input type = button value = View_Most_Popular_Books onclick = window.location.href='Most_Popular_Books.php' size = 40> <br><br>
 						
 						<input type = button value = Calculate_Average_Fine onclick = window.location.href='Avg_Price.html' size = 40> <br><br>
 						
