@@ -57,7 +57,7 @@ $SearchResult = mysqli_query($con, $query);
 $rowCount = mysqli_num_rows($SearchResult);
 echo "Our Row count is: ".$rowCount;
 #var_dump(getType(urlICS($rows['Name'], $rows['Location'], $rows['Description'], $rows['Google_Time_Start'], $rows['Google_Time_End'])));
-if (mysqli_num_rows($rowCount) != 0)
+if (mysqli_num_rows($SearchResult) != 0)
 {
 	echo "Inside If Statement";
 	echo "result /=0<br>";
