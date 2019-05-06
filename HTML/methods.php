@@ -313,19 +313,29 @@ $copyCopyNO, $copyPosition,
 $procCDate, $procLocation, $procCEditor
 )
 {
-	$con = mysqli_connect($ip, $mysqlUser, $mysqlPassword, $mysqlDB);
-	mysqli_select_db($con, $mysqlDB);
-	
+
+	echo "PubID: ".$pubPubID;
+	$con = mysqli_connect("localhost", "admin", "password", "Library");
+        mysqli_select_db($con, "Library");
+
+        if (!$con)
+        {
+                die("Connection failed: " . mysqli_connect_error());
+	}
+
+	echo "<br> After Database Connect";
 	$queryPublisher = "INSERT INTO Publisher VALUES ('$pubPubID', '$pubName', '$pubAddress')";
 	$queryDocument = "INSERT INTO Document VALUES ('$docID', '$docTitle', '$docPDate', '$pubPubID')";
 	$queryCopy = "INSERT INTO Copy VALUES ('$docID', '$copyCopyNO', '1111', '$copyPosition')";
-	$queryProceeding = "INSERT INTO Proceeding VALUES ('$$docID', '$procCDate', '$procLocation', '$procCEditor')";
+	$queryProceeding = "INSERT INTO Proceedings VALUES ('$docID', '$procCDate', '$procLocation', '$procCEditor')";
 
+	echo "<br> Sending SQL Queries";
 	mysqli_query($con, $queryPublisher);
 	mysqli_query($con, $queryDocument);
 	mysqli_query($con, $queryCopy);
 	mysqli_query($con, $queryProceeding);
-	
+	echo "<br> SQL Queries Sent";
+
 }
 
 function addJournalVolume
