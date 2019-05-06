@@ -502,15 +502,7 @@ function frequentBorrowedBooks($LibID)
 	}
 
 
-	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title
-From Borrows BRW
-JOIN Book BK ON BRW.DocID = BK.DocID
-JOIN Document D ON D.DocID = BK.DocID
-JOIN Branch B ON B.LibID = BRW.LibID
-WHERE BRW.libid = '$LibID'
-GROUP BY BRW.LibID, BRW.DocID
-Order By cnt DESC
-LIMIT 10";
+	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title From Borrows BRW JOIN Book BK ON BRW.DocID = BK.DocID JOIN Document D ON D.DocID = BK.DocID JOIN Branch B ON B.LibID = BRW.LibID WHERE BRW.libid = '$LibID' GROUP BY BRW.LibID, BRW.DocID Order By cnt DESC LIMIT 10";
 
 	$SearchResult = mysqli_query($con, $query);
 	
