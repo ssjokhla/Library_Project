@@ -32,9 +32,15 @@ if($rowCount > 0)
 						
 						<input type = button value = Search_Documents onclick=window.location.href='Search_Documents.html' size= 40> <br><br>
 			   
-			            <input type = button value = Add_New_User onclick=window.location.href='Add_User.html' size= 40> <br><br>
+			            		<input type = button value = Add_New_User onclick=window.location.href='Add_User.html' size= 40> <br><br>
 
-                        <input type = button value = View_Branch_Information onclick=window.location.href='View_Branch_Information.php' size= 40>  <br><br>
+                      				<input type = button value = View_Branch_Information onclick=window.location.href='View_Branch_Information.php' size= 40>  <br><br>
+						<form action="/searchResult.php" method="post">
+							Document ID:<br>
+							<input type="text" name="DocID">
+							<br><br>
+						<input type="submit" value="Search">
+						</form>
 
 						<input type = button value = Most_Frequent_Borrowers onclick=window.location.href='Most_Borrowers.html' size= 40> <br><br>
 						
