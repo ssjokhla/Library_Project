@@ -2,30 +2,22 @@
     <body>
 	    <center><Font face=Andalus size=5> REGISTRATION FORM </Font></center><br><br>		 
 		    <Font face=andalus size=4>
-				
-						Reader_ID: <INPUT type=text  name= readerid><br><br>
+			<form action="Add_User.php" method="post">
+			
+						Reader_ID: <INPUT type=text  name= "readerid"><br><br>
 						
-						Reader_Type: <INPUT type=text  name=rtype><br><br>
+						Reader_Type: <INPUT type=text  name="rtype"><br><br>
 						
-						Reader_Name: <INPUT type=text  name=rname><br><br>
+						Reader_Name: <INPUT type=text  name="rname"><br><br>
 						
-						Address: <INPUT type=text  name=raddress><br><br>
+						Address: <INPUT type=text  name="raddress"><br><br>
 						
 						<!--<input type  = button value=REGISTER> <br><br>-->
 						
-						<button onclick="myFunction()">Register</button>
+						<input type="submit" value="Add User">
+						</form>
 						
-						<input type = button value = Back onclick=window.location.href='Admin_Menu.html' size= 40> <br><br> 
-						
-						
+						<input type = button value = Back onclick=window.location.href='Admin_Menu.php' size= 40> <br><br> 
 
-			<script>
-					function myFunction() {
-											alert("Record Sucessfully inserted!!!");
-										  }
-			</script>
-
-						
-						
 	</body>
 </HTML>	
