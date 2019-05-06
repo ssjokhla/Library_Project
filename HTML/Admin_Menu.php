@@ -36,7 +36,7 @@ if($rowCount > 0)
 
                       				<input type = button value = View_Branch_Information onclick=window.location.href='View_Branch_Information.php' size= 40>  <br><br>
 						<form action="/searchResult.php" method="post">
-							Document ID:<br>
+							Library ID:<br>
 							<input type="text" name="DocID">
 							<br><br>
 						<input type="submit" value="Search">
