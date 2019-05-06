@@ -464,31 +464,25 @@ function frequentBorrowers($LibID)
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', R.rname
-From Borrows BRW
-JOIN Book BK ON BRW.DocID = BK.DocID
-JOIN Reader R ON R.ReaderID = BRW.ReaderID
-JOIN Branch B ON B.LibID = BRW.LibID
-WHERE BRW.LibID = '$LibID'
-GROUP BY BRW.LibID, BRW.ReaderID
-Order By cnt DESC
-LIMIT 10";
+	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', R.rname From Borrows BRW JOIN Book BK ON BRW.DocID = BK.DocID JOIN Reader R ON R.ReaderID = BRW.ReaderID JOIN Branch B ON B.LibID = BRW.LibID WHERE BRW.LibID = '$LibID' GROUP BY BRW.LibID, BRW.ReaderID Order By cnt DESC LIMIT 10";
 
-	$SearchResult = mysqli_query($con, $query);
+       	$result = mysqli_query($con, $query);
+        $rowCount = mysqli_num_rows($result);
+        echo "<br> Row count is: ".$rowCount;
+        if (mysqli_num_rows($result) != 0)
+        {
+                echo "<table>";
+                echo "<tr><th>Count</th><th>LibraryID</th><th>Reader Name</th></tr>";
+                while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
+                {
+                        echo "<tr><td>".$rows['cnt']."</td>";
+                        echo "<td>".$rows['Library']."</td>";
+                        echo "<td>".$rows['rname']."</td>";
+
+                }
+        echo "</table>";
+        }
 	
-	$rowCount = mysqli_num_rows($SearchResult);
-	if (mysqli_num_rows($rowCount) != 0)
-	{
-		echo "<table>";
-		echo"<tr><th>Count</th><th>Library ID</th></tr><tr><th>Reader Name</th>>/tr>";
-		while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
-		{
-			echo "<tr><td>".$rows['cnt']."</td></tr>";
-			echo "<tr><td>".$rows['Library']."</td></tr>";
-			echo "<tr><td>".$rows['rname']."</td></tr>";
-		}
-	echo "</table>";
-	}		
 }
 
 function frequentBorrowedBooks($LibID)
