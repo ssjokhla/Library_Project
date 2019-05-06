@@ -507,17 +507,16 @@ function frequentBorrowedBooks($LibID)
 
 	$result = mysqli_query($con, $query);
 	$rowCount = mysqli_num_rows($result);
-
-	if (mysqli_num_rows($rowCount) != 0)
+	echo "<br> Row count is: ".$rowCount;
+	if (mysqli_num_rows($result) != 0)
 	{
-		echo "result /=0<br>";
 		echo "<table>";
-		echo"<tr><th>Count</th><th>LibraryID</th></tr><tr><th>Title</th></tr>";
+		echo"<tr><th>Count</th><th>LibraryID</th><th>Title</th></tr>";
 		while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
 		{
-			echo "<tr><td>".$rows['cnt']."</td></tr>";
-			echo "<tr><td>".$rows['Library']."</td></tr>";
-			echo "<tr><td>".$rows['Title']."</td></tr>";
+			echo "<tr><td>".$rows['cnt']."<td>";
+			echo "<td>".$rows['Library']."</td>";
+			echo "<td>".$rows['Title']."</td>";
 
 		}
 	echo "</table>";
