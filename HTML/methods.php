@@ -415,7 +415,7 @@ function addReader($readerID, $rType, $rName, $rAddress)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query1 = "INSERT INTO Reader VALUES('$readerID', '$rtype', '$rName', '$rAddress')";
+	$query1 = "INSERT INTO Reader VALUES('$readerID', '$rType', '$rName', '$rAddress', '0')";
 	mysqli_query($con, $query1);
 }
 
