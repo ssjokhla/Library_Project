@@ -457,7 +457,9 @@ function frequentBorrowers($LibID)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query = "select * from Borrows left join Reserves on Borrows.ReaderID = Reserves.ReaderID WHERE Borrows.LibID = '$LibID' union select * from Borrows right join Reserves on Borrows.ReaderID = Reserves.ReaderID WHERE Reserves.LibID = '$LibID' limit 10";
+	//$query = "select * from Borrows left join Reserves on Borrows.ReaderID = Reserves.ReaderID WHERE Borrows.LibID = '$LibID' union select * from Borrows right join Reserves on Borrows.ReaderID = Reserves.ReaderID WHERE Reserves.LibID = '$LibID' limit 10";
+	$query = "select * from Borrows , Reserves full join Reserves where extract(year from BDtime) group by Reserves.DocID and Borrows.DocID having max(Borrows.DocID) and max(Reserves.DocID) limit 10; 
+
 	$SearchResult = mysqli_query($con, $query);
 	
 	$rowCount = mysqli_num_rows($SearchResult);
