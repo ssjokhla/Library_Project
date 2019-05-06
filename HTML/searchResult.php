@@ -35,6 +35,8 @@ Library ID:
 include('methods.php');
 session_start();
 
+echo "test";
+/*
 $ReaderID=$_SESSION['CardNumber'];
 echo "Reader ID is: ".$ReaderID;
 $DocID=$_POST['DocID'];
@@ -69,7 +71,7 @@ if (mysqli_num_rows($result) != 0)
 		echo "</td><td>".$rows['PubName']."</td></tr>";
 	}
 	echo "</table>";
-}
+}*/
 ?>
 
 </html>
