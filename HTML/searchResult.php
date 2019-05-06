@@ -35,10 +35,8 @@ Library ID:
 include('methods.php');
 session_start();
 
-echo "test";
 
 $ReaderID=$_SESSION['CardNumber'];
-echo "Reader ID is: ".$ReaderID;
 $DocID=$_POST['DocID'];
 $Title=$_POST['Title'];
 $PubName=$_POST['Pubname'];
@@ -47,7 +45,6 @@ $con = mysqli_connect("localhost", "admin", "password", "Library");
 mysqli_select_db($con, "Library");
 
 if (!$con){
-	logError("Connection Failed: " . mysqli_connect_error());
 	die("Connection failed: " . mysqli_connect_error());
 }
 
@@ -55,17 +52,12 @@ $query = "SELECT * FROM Document NATURAL JOIN Copy NATURAL JOIN Publisher WHERE 
 
 $SearchResult = mysqli_query($con, $query);
 $rowCount = mysqli_num_rows($SearchResult);
-echo "Our Row count is: ".$rowCount;
-#var_dump(getType(urlICS($rows['Name'], $rows['Location'], $rows['Description'], $rows['Google_Time_Start'], $rows['Google_Time_End'])));
 if (mysqli_num_rows($SearchResult) != 0)
 {
-//	echo "Inside If Statement";
-//	echo "result /=0<br>";
 	echo "<table>";
 	echo"<tr><th>Title</th><th>Document ID</th><th>Copy Number</th><th>Library ID</th><th>Publisher Name</th></tr>";
 	while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
 	{
-		echo "Inside While Loop";
 		
 		echo "<tr><td>".$rows['Title'];
 		echo "</td><td>".$rows['DocID'];
