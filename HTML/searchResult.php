@@ -62,14 +62,14 @@ if (mysqli_num_rows($SearchResult) != 0)
 //	echo "Inside If Statement";
 //	echo "result /=0<br>";
 	echo "<table>";
-	echo"<tr><th>Borrow ID</th><th>Document ID</th><th>Copy Number</th></tr>";
+	echo"<tr><th>Title</th><th>Document ID</th><th>Copy Number</th><th>Library ID</th><th>Publisher Name</th></tr>";
 	while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
 	{
 		echo "Inside While Loop";
 		
 		echo "<tr><td>".$rows['Title'];
 		echo "</td><td>".$rows['DocID'];
-		echo "</td><td>".$rows['CopyNo'];
+		echo "</td><td>".$rows['CopyNO'];
 		echo "</td><td>".$rows['LibID'];
 		echo "</td><td>".$rows['PubName']."</td></tr>";
 	}
