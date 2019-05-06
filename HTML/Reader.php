@@ -52,6 +52,26 @@ if (mysqli_num_rows($result) != 0)
 }
 
 
+echo "<br><br><h2>Reserved Books</h2>";
+$q = "Select * from Reserves WHERE ReaderID = $ReaderID";
+$result = mysqli_query($con, $q);
+$rowCount = mysqli_num_rows($result);
+if (mysqli_num_rows($result) != 0)
+{
+        echo "<table>";
+        echo "<table class='table'>";
+        //echo "<tbody>";
+        echo"<tr><th>Reserve ID</th><th>Document ID</th><th>Copy Number</th></tr>";
+        while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
+        {
+
+                echo "<tr><td>".$rows['ResNO'];
+                echo "</td><td>".$rows['DocID'];
+                echo "</td><td>".$rows['CopyNO']."</td></tr>";
+        }
+        echo "</table>";
+}
+
 
 
 	
