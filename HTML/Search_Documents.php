@@ -2,9 +2,9 @@
 include('methods.php');
 session_start();
 
-$DocID=$_SESSION['docid'];
-$CopyNO=$_SESSION['copyno'];
-$LibID=$_SESSION['libid'];
+$DocID=$_POST['docid'];
+$CopyNO=$_POST['copyno'];
+$LibID=$_POST['libid'];
 
 searchDoc($DocID, $CopyNO, $LibID);
 
