@@ -37,13 +37,13 @@ if($rowCount > 0)
                       				<input type = button value = View_Branch_Information onclick=window.location.href='View_Branch_Information.php' size= 40>  <br><br>
 						<form action="/Most_Borrowers.php" method="post">
 							Library ID:<br>
-							<input type="text" name="DocID">
+							<input type="text" name="LibID">
 						<input type="submit" value="Most_Frequent_Borrowers">
 						</form>
 
 						<form action="/Most_Borrowed_Books.php" method="post">
                                                         Library ID:<br>
-                                                        <input type="text" name="DocID">
+                                                        <input type="text" name="LibID">
                                                 <input type="submit" value="View_Most_Borrowed_Books">
                                                 </form>
 	

@@ -493,6 +493,7 @@ LIMIT 10";
 
 function frequentBorrowedBooks($LibID)
 {
+	echo "LibraryID is :".$LibID;
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
 
@@ -504,15 +505,15 @@ function frequentBorrowedBooks($LibID)
 
 	$query = "Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title From Borrows BRW JOIN Book BK ON BRW.DocID = BK.DocID JOIN Document D ON D.DocID = BK.DocID JOIN Branch B ON B.LibID = BRW.LibID WHERE BRW.libid = '$LibID' GROUP BY BRW.LibID, BRW.DocID Order By cnt DESC LIMIT 10";
 
-	$SearchResult = mysqli_query($con, $query);
-	
-	$rowCount = mysqli_num_rows($SearchResult);
+	$result = mysqli_query($con, $query);
+	$rowCount = mysqli_num_rows($result);
+
 	if (mysqli_num_rows($rowCount) != 0)
 	{
 		echo "result /=0<br>";
 		echo "<table>";
 		echo"<tr><th>Count</th><th>LibraryID</th></tr><tr><th>Title</th></tr>";
-		while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
+		while($rows = mysqli_fetch_array($result,MYSQLI_ASSOC))
 		{
 			echo "<tr><td>".$rows['cnt']."</td></tr>";
 			echo "<tr><td>".$rows['Library']."</td></tr>";
