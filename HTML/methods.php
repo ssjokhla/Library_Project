@@ -459,7 +459,7 @@ function frequentBorrowers()
 	$query = "SELECT * FROM Borrows ORDERY BY ReaderID DESC limit 10";
 	$SearchResult = mysqli_query($con, $query);
 	$rowCount = mysqli_num_rows($SearchResult);
-	if (mysqli_num_rows($result) != 0)
+	if (mysqli_num_rows($rowCount) != 0)
 	{
 		echo "result /=0<br>";
 		echo "<table>";
@@ -502,8 +502,7 @@ function frequentBorrowedBooks()
 
 function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
 {
-	$diffTime = 0;
-	$fine = 0;
+
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
 
@@ -511,22 +510,21 @@ function computeAverageFine($Bornumber, $readerID, $BDTime, $RDTime)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}	
-	$query1 = "Select BDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
-	$BDTime = mysqli_query($con, $query1);
+	$query = "select * from Borrows left join Reserves on Borrows.ReaderID = Reserves.ReaderID union select * from Borrows right join Reserves on Borrows.ReaderID = Reserves.ReaderID where extract(year from BDtime) limit 10";
+	$SearchResult = mysqli_query($con, $query);
 	
-	$query2 = "Select RDTime FROM Borrows WHERE Bornumber = '$Bornumber' AND ReaderID = '$readerID'";
-	$RDTime = mysqli_query($con, $query2);
-	
-	$diffTime = $RDTime - $BDTime;
-	if($diffTime > 20)
+	$rowCount = mysqli_num_rows($SearchResult);
+	if (mysqli_num_rows($rowCount) != 0)
 	{
-		//Floor apparently rounds the number down to the nearest whole number
-		$fine = (floor($diffTime) * .20);
-	}
-	else
-	{
-		$fine = 0;
-	}
-	
+		echo "result /=0<br>";
+		echo "<table>";
+		echo"<tr><th>Branch Name</th><th>Branch Location</th></tr>";
+		while($rows = mysqli_fetch_array($SearchResult,MYSQLI_ASSOC))
+		{
+		
+			echo "<tr><td>".$rows['ReaderID']."</td></tr>";
+		}
+	echo "</table>";
+	}		
 }
 ?>
