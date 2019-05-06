@@ -392,11 +392,12 @@ function searchDoc($docID, $copyNo, $libID)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and CopyNO = '$copyNo' and LibID = '$LibID' and RDTime = Null";
+	$query1 = "SELECT * FROM Borrows WHERE DocID = '$docID' and CopyNO = '$copyNo' and LibID = '$libID' and RDTime is NULL";
 	$result = mysqli_query($con, $query1);
 	$resultCount = mysqli_num_rows($result);
+	echo "<br> Result Count is: ".$resultCount;
 	
-	if($resultCount > 0)
+	if($resultCount == 0)
 	{
 		echo "Status is available";
 	}
