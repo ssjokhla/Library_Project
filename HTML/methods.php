@@ -385,6 +385,9 @@ $copyCopyNO, $copyPosition
 
 function searchDoc($docID, $copyNo, $libID)
 {
+	echo "<br><br>Document ID is: ".$docID;
+	echo "<br>Copy NO is: ".$copyNo;
+	echo "<br>Library ID is: ".$libID;
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
 
@@ -396,10 +399,11 @@ function searchDoc($docID, $copyNo, $libID)
 	$result = mysqli_query($con, $query1);
 	$resultCount = mysqli_num_rows($result);
 	echo "<br> Result Count is: ".$resultCount;
+	echo "<br>";
 	
 	if($resultCount == 0)
 	{
-		echo "Status is available";
+		echo "Book is unavailable.";
 	}
 	else
 	{
