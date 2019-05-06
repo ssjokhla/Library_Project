@@ -1,12 +1,32 @@
-select * 
-from Borrows
- left join Reserves on Borrows.ReaderID = Reserves.ReaderID
+Print top 10 most frequent borrowers in a branch and the number of books each has borrowed
+Select count(BRW.DocID) as cnt, B.LNAME as 'Library', R.rname
+From Borrows BRW
+JOIN Book BK ON BRW.DocID = BK.DocID
+JOIN Reader R ON R.ReaderID = BRW.ReaderID
+JOIN Branch B ON B.LibID = BRW.LibID
+WHERE BRW.LibID = '1111'
+GROUP BY BRW.LibID, BRW.ReaderID
+Order By cnt DESC
+LIMIT 10;
 
-union
+ Print top 10 most borrowed books in a branch
+ Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title
+From Borrows BRW
+JOIN Book BK ON BRW.DocID = BK.DocID
+JOIN Document D ON D.DocID = BK.DocID
+JOIN Branch B ON B.LibID = BRW.LibID
+WHERE BRW.libid = '1112'
+GROUP BY BRW.LibID, BRW.DocID
+Order By cnt DESC
+LIMIT 10;
 
-select * 
-from Borrows  
-right join Reserves on Borrows.ReaderID = Reserves.ReaderID
-where extract(year from BDtime)
-limit 10; 
-
+Print the 10 most popular books of the year.
+Select count(BRW.DocID) as cnt, B.LNAME as 'Library', D.Title
+From Borrows BRW
+JOIN Book BK ON BRW.DocID = BK.DocID
+JOIN Document D ON D.DocID = BK.DocID
+JOIN Branch B ON B.LibID = BRW.LibID
+WHERE YEAR(BRW.BDTime) = '2019'
+GROUP BY BRW.DocID, YEAR(BRW.BDTime)
+Order By cnt DESC
+LIMIT 10;
