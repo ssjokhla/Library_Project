@@ -408,6 +408,7 @@ function searchDoc($docID, $copyNo, $libID)
 
 function addReader($readerID, $rType, $rName, $rAddress)
 {
+	echo "<br> Function Hit.";
 	$con = mysqli_connect("localhost", "admin", "password", "Library");
 	mysqli_select_db($con, "Library");
 

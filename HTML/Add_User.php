@@ -1,4 +1,5 @@
 <?php
+include("methods.php");
 session_start();
 $ReaderID=$_POST['readerid'];
 $RType=$_POST['rtype'];
